@@ -11,8 +11,11 @@ export const renkler = {
   yazi: '#FFFFFF', // Ana yazı rengi (beyaz)
   ikincilYazi: '#C9D1DC', // Açıklama yazıları için biraz soluk beyaz
   pasifIkon: '#E6EAF0', // Alt menüde seçili olmayan ikon ve yazıların rengi
-  guvenli: '#1ECB6B', // "Güvenli İpuçları" kutusunun yeşili
-  tehlike: '#E5394B', // "Kaçınılması Gerekenler" kutusunun kırmızısı
+  icKart: '#1B2736', // Kartın içindeki küçük kutular (ör. her bir "Yapılacak" maddesi)
+  guvenli: '#1ECB6B', // "Güvenli İpuçları" kutusunun yeşili (kenar ve ikon)
+  guvenliZemin: '#0C3A2B', // "Güvenli İpuçları" kutusunun koyu yeşil zemini
+  tehlike: '#E5394B', // "Kaçınılması Gerekenler" kutusunun kırmızısı (kenar ve ikon)
+  tehlikeZemin: '#3A1323', // "Kaçınılması Gerekenler" kutusunun koyu kırmızı zemini
   vurgu: '#E23A77', // Varsayılan vurgu rengi (Doğal Afetler pembesi)
 };
 
