@@ -31,6 +31,64 @@ const barinmaSenaryolari = [
       kontrolEdilecek: false,
     },
   },
+
+  // ===== referans/06 =====
+  {
+    id: 'kesintide-gida-guvenligi',
+    kategori: 'barinma',
+    ad: 'Kesintide Gıda Güvenliği',
+    ikon: 'basket-outline',
+    durumAni: null, // Fotoğrafı yok
+    sonrasi: {
+      baslik: 'Gıda Güvenliği — Kesinti Sonrası',
+      ozet: 'Elektriğin gelmesi ısınmış gıdayı güvenli yapmaz. Kesinti süresini, kapakları ve gıda sıcaklığını değerlendir.',
+      yapilacaklar: [
+        { ikon: 'fridge-outline', baslik: 'Buzdolabında 4 saat sınırını hatırla.', aciklama: 'Kapak kapalıysa buzdolabı yaklaşık 4 saat korur. Daha uzun kesintide soğuk kaldığı doğrulanamayan et, süt, yumurta ve artan yemekleri at.' },
+        { ikon: 'snowflake-variant', baslik: 'Doluluğu dikkate al.', aciklama: 'Kapak açılmadıysa dolu dondurucu yaklaşık 48, yarı dolu dondurucu 24 saat korur. Bu süreler sıcaklık kontrolünün yerine geçmez.' },
+        { ikon: 'thermometer', baslik: 'Elektrik gelir gelmez sıcaklığı ölç.', aciklama: 'Et, süt ve artan yemekler 4°C’nin üzerinde 2 saatten uzun kaldıysa tüketme. Yeniden soğuması önceki riski ortadan kaldırmaz.' },
+        { ikon: 'package-variant-closed', baslik: 'Her donmuş paketi ayrı değerlendir.', aciklama: 'Et veya sebzeler hâlâ buz kristalliyse ya da 4°C ve altındaysa yeniden dondurabilirsin. Çözünmüş dondurmayı at.' },
+        { ikon: 'trash-can-outline', baslik: 'Şüpheli gıdayı ayır ve at.', aciklama: 'Güvenliğini anlamak için tadına bakma. Normal kokması veya görünmesi yeterli değildir; şüpheli gıdayı başkasına verme.' },
+      ],
+      guvenliIpuclari: ['Kesinti süresini not et.', 'Gıda termometresi kullan.', 'Güvenli gıdayı soğuk tut.'],
+      kacinilmasiGerekenler: ['Tadına bakarak test etme.', 'Kokusuna güvenme.', 'Şüpheli gıdayı tekrar dondurma.'],
+      ozelDurum: {
+        ikon: 'basket-outline',
+        baslik: 'Süre veya Sıcaklık Bilinmiyorsa',
+        aciklama: 'Et, balık, süt, yumurta ve pişmiş yemeklerde risk alma. Güvenli sıcaklıkta kaldığını doğrulayamıyorsan tüketme; bozulabilir gıdayı at.',
+      },
+      kaynak: 'CDC • FoodSafety.gov',
+      kontrolEdilecek: false,
+    },
+  },
+
+  // ===== referans/07 =====
+  {
+    id: 'temiz-su-ihtiyaci',
+    kategori: 'barinma',
+    ad: 'Temiz Su İhtiyacı',
+    ikon: 'water-outline',
+    durumAni: null, // Fotoğrafı yok
+    sonrasi: {
+      baslik: 'Temiz Suya Ulaştıktan Sonra',
+      ozet: 'Suyun yeniden akması içilebilir olduğunu göstermez. Güvenli suyu kirletmeden sakla; resmî uyarıları izlemeyi sürdür.',
+      yapilacaklar: [
+        { ikon: 'bullhorn-outline', baslik: 'İçilebilirlik duyurusunu bekle.', aciklama: 'Su idaresi ve sağlık yetkililerinin açıklamasını izle. Şebeke güvenli ilan edilmediyse güvenilir ambalajlı su kullan.' },
+        { ikon: 'clipboard-check-outline', baslik: 'Uyarının türüne göre davran.', aciklama: 'Kaynatma, içmeme ve hiç kullanmama uyarıları farklıdır. Hiç kullanmama uyarısında musluk suyunu temizlik veya yıkanma için de kullanma.' },
+        { ikon: 'bottle-tonic-outline', baslik: 'Suyu temiz, kapaklı kaba koy.', aciklama: 'Gıda temasına uygun, temizlenip dezenfekte edilmiş kap kullan. Daha önce yakıt, ilaçlama ürünü veya temizlik kimyasalı içeren kaba su doldurma.' },
+        { ikon: 'cup-water', baslik: 'Kabın içini yeniden kirletme.', aciklama: 'Elini veya kirli bardağı suya sokma; dökerek al. Kapağı kapat, hazırlama tarihini yaz; serin ve gölgede sakla.' },
+        { ikon: 'silverware-fork-knife', baslik: 'Yiyecek ve buzda da güvenli su kullan.', aciklama: 'Uyarı sürerken yemek, diş fırçalama ve buz için güvenli su seç. Şebekeye bağlı buzdolabının su ve buzunu kullanma.' },
+      ],
+      guvenliIpuclari: ['Kabını etiketle.', 'Kapağını kapalı tut.', 'Duyuruları izle.'],
+      kacinilmasiGerekenler: ['Berraklığına güvenip içme.', 'Kimyasal bidonunu kullanma.', 'Kirli kaba temiz su ekleme.'],
+      ozelDurum: {
+        ikon: 'flask-outline',
+        baslik: 'Kimyasal Kirlenme Şüphesi Varsa',
+        aciklama: 'Kaynatmak yakıt, zehirli kimyasal veya radyoaktif madde içeren suyu güvenli yapmaz. İçme; ambalajlı ya da yetkililerin güvenli bildirdiği başka kaynağı kullan.',
+      },
+      kaynak: 'CDC',
+      kontrolEdilecek: false,
+    },
+  },
 ];
 
 export default barinmaSenaryolari;

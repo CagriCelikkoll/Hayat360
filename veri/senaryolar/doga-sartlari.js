@@ -31,6 +31,35 @@ const dogaSartlariSenaryolari = [
       kontrolEdilecek: false,
     },
   },
+
+  // ===== referans/11 =====
+  {
+    id: 'yilan-isirigi',
+    kategori: 'doga-sartlari',
+    ad: 'Yılan Isırığı',
+    ikon: 'snake',
+    durumAni: null, // Fotoğrafı yok
+    sonrasi: {
+      baslik: 'Yılan Isırığı Sonrası',
+      ozet: 'İlk yardım tehlikeyi ortadan kaldırmaz. Yılan ısırığı şüphesinde acil sağlık değerlendirmesini beklemeden iste.',
+      yapilacaklar: [
+        { ikon: 'phone-in-talk', baslik: '112 ile iletişimi sürdür.', aciklama: 'Isırılan kişinin yerini ve olay saatini bildir. Sağlık kuruluşuna güvenli ulaştırma için yönlendirme al; kişinin kendisinin araç kullanmasına izin verme.' },
+        { ikon: 'bed-outline', baslik: 'Hareketi mümkün olduğunca azalt.', aciklama: 'Kişiyi sakin tut ve ısırılan uzvu hareketsiz destekle. Yardım beklerken yürütme veya koşturma; gereksiz hareketten kaçın.' },
+        { ikon: 'ring', baslik: 'Sıkan eşyaları çıkar.', aciklama: 'Şişmeye karşı yüzük, saat veya dar giysiyi dikkatle çıkar ya da gevşet. Isırılan bölgeyi sıkan yeni bir bağ uygulama.' },
+        { ikon: 'lungs', baslik: 'Solunumunu ve bilincini izle.', aciklama: 'Kusuyor veya bilinci kapalı ama normal nefes alıyorsa yan çevir. Tepkisiz ve normal nefes almıyorsa 112 yönlendirmesiyle kalp masajına başla.' },
+        { ikon: 'clipboard-check-outline', baslik: 'Bilgileri sağlık ekibine aktar.', aciklama: 'Isırılma saatini, belirtileri ve yapılan ilk yardımı anlat. Yılanın görünüşünü hatırlıyorsan tarif et; yakalamaya veya öldürmeye çalışma.' },
+      ],
+      guvenliIpuclari: ['Kişinin yanında kal.', 'Kullanılan ilaçları ekibe bildir.', 'Hastane gözlemini tamamla.'],
+      kacinilmasiGerekenler: ['Turnike veya sıkı bağ uygulama.', 'Yarayı kesme veya emme.', 'Aspirin veya ibuprofen verme.'],
+      ozelDurum: {
+        ikon: 'snake',
+        baslik: 'İyi görünüyorsa bile',
+        aciklama: 'Belirti çıkmasını bekleyerek hastaneye başvuruyu erteleme. Gözlem, tetanoz değerlendirmesi ve gerekiyorsa panzehir kararını sağlık ekibi verir; bitkisel veya ev yapımı tedaviler kullanma.',
+      },
+      kaynak: 'WHO • NHS • St John Ambulance',
+      kontrolEdilecek: false,
+    },
+  },
 ];
 
 export default dogaSartlariSenaryolari;
