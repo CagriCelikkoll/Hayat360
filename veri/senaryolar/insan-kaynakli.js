@@ -1,5 +1,7 @@
 // Bu dosya "İnsan Kaynaklı Felaketler" kategorisinin senaryolarını tutar.
-// Metinler referans/ fotoğraflarından HARFİ HARFİNE aktarıldı; değiştirmeyin.
+// Fotoğraftan gelen metinler HARFİ HARFİNE aktarıldı; değiştirmeyin.
+// "TASLAK" yorumlu sekmeleri fotoğraf olmadığı için biz yazdık (kontrolEdilecek: true);
+// bunlar uzman kontrolünden geçene kadar ekranda sarı "Taslak" etiketiyle görünür.
 // Alanların ne anlama geldiği veri/senaryolar/index.js dosyasının başında yazıyor.
 
 const insanKaynakliSenaryolar = [
@@ -9,7 +11,27 @@ const insanKaynakliSenaryolar = [
     kategori: 'insan-kaynakli',
     ad: 'Doğal Gaz Kaçağı',
     ikon: 'fire',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Doğal Gaz Kokusu Aldım',
+      ozet: 'Çürük sarımsağa benzeyen koku gaz kaçağı belirtisi olabilir. Kıvılcım çıkaracak hiçbir şeye dokunmadan ortamı havalandır ve dışarı çık.',
+      yapilacaklar: [
+        { ikon: 'lightbulb-off-outline', baslik: 'Kıvılcım çıkaracak hiçbir şeye dokunma.', aciklama: 'Işık düğmesine, prize veya elektrikli cihazlara dokunma. Çakmak ve kibrit yakma.' },
+        { ikon: 'pipe-valve', baslik: 'Güvenle ulaşabiliyorsan vanayı kapat.', aciklama: 'Sayaç veya cihaz vanasını kapat. Vanaya ulaşmak için kokunun yoğun olduğu yerde oyalanma.' },
+        { ikon: 'window-open-variant', baslik: 'Kapı ve pencereleri aç.', aciklama: 'Çıkarken ortamı havalandır. Bunun için aspiratör veya elektrikli fan çalıştırma.' },
+        { ikon: 'exit-run', baslik: 'Herkesi dışarı çıkar.', aciklama: 'Yanındakileri ve evcil hayvanları alıp binadan çık. Eşya toplamak için oyalanma.' },
+        { ikon: 'bell-off-outline', baslik: 'Komşuların zilini çalma.', aciklama: 'Zil kıvılcım çıkarabilir. Komşuları kapıyı elle çalarak veya seslenerek uyar.' },
+      ],
+      guvenliIpuclari: ['Sakin ve hızlı hareket et.', 'Çürük sarımsak kokusunu ciddiye al.', 'Komşuları sesli uyar.'],
+      kacinilmasiGerekenler: ['Kokunun kaynağını arama.', 'Asansör çalıştırma.', 'Sigara yakma.'],
+      ozelDurum: {
+        ikon: 'alert',
+        baslik: 'Koku Çok Yoğunsa veya Biri Fenalaştıysa',
+        aciklama: 'Vana veya pencere için içeride oyalanma; hemen dışarı çık. Bayılan, baş dönmesi veya nefes darlığı olan biri varsa güvenli yerden 112’yi ara.',
+      },
+      kaynak: 'GAZBİR • İGDAŞ',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Doğal Gaz Kaçağı Sonrası',
       ozet: 'Dışarı çıkman veya kokunun azalması, kaçağın giderildiğini göstermez. Güvenli alanda bekle ve gaz dağıtım ekibinin talimatlarını izle.',
@@ -39,7 +61,27 @@ const insanKaynakliSenaryolar = [
     kategori: 'insan-kaynakli',
     ad: 'Kimyasal Sızıntı',
     ikon: 'flask-outline',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Kimyasal Sızıntı Anında',
+      ozet: 'Havaya karışan kimyasal kısa sürede yayılabilir. Yetkililer aksini söylemedikçe kapalı bir yerde kal ve dış havanın içeri girmesini engelle.',
+      yapilacaklar: [
+        { ikon: 'home-lock', baslik: 'İçerideysen içeride kal.', aciklama: 'Yetkililer tahliye demedikçe binadan çıkma. Çocukları ve evcil hayvanları hemen içeri al.' },
+        { ikon: 'window-closed-variant', baslik: 'Kapı ve pencereleri kapat.', aciklama: 'Fanları, klimayı ve kaloriferi kapat. Az pencereli bir iç odaya geç.' },
+        { ikon: 'door-closed', baslik: 'Aralıkları kapat.', aciklama: 'Kapı ve pencere kenarlarını bant veya kumaşla kapatarak dış havanın içeri girmesini azalt.' },
+        { ikon: 'weather-windy', baslik: 'Dışarıdaysan uzaklaş.', aciklama: 'Sızıntının olduğu alandan olabildiğince uzaklaş. Mümkünse rüzgârın geldiği yöne doğru git.' },
+        { ikon: 'radio', baslik: 'Resmî talimatları dinle.', aciklama: 'Radyo, televizyon veya telefon uyarılarından tahliye mi gerektiğini yoksa içeride mi kalman gerektiğini öğren. Polis ve itfaiyenin talimatlarına uy.' },
+      ],
+      guvenliIpuclari: ['Sakin kal ve bekle.', 'Telefonunu yanında tut.', 'Yakınlarına nerede olduğunu bildir.'],
+      kacinilmasiGerekenler: ['Başkasına yardım için dışarı çıkma.', 'Sızıntıyı görmeye gitme.', 'Havalandırmak için pencere açma.'],
+      ozelDurum: {
+        ikon: 'water',
+        baslik: 'Gözüne veya Cildine Bulaştıysa',
+        aciklama: 'Bulaşan yeri hemen bol temiz suyla yıka. Nefes darlığı, bilinç değişikliği veya gözde şiddetli yanma varsa 112’yi ara.',
+      },
+      kaynak: 'CDC • FEMA • Red Cross • Emniyet Genel Müdürlüğü',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Kimyasal Sızıntı Sonrası',
       ozet: 'Kokunun kaybolması tehlikenin bittiğini kanıtlamaz. Güvenli yerde kal; dönüş, arındırma ve sağlık talimatlarını yetkililerden al.',
@@ -68,7 +110,27 @@ const insanKaynakliSenaryolar = [
     kategori: 'insan-kaynakli',
     ad: 'Bina Yangını',
     ikon: 'office-building-outline',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Binada Yangın Var',
+      ozet: 'Yangında duman, alevden daha hızlı ve daha tehlikeli olabilir. Hemen dışarı çık, dışarıda kal ve güvenli yerden 112’yi ara.',
+      yapilacaklar: [
+        { ikon: 'bullhorn-outline', baslik: 'Herkesi uyar ve çıkmaya başla.', aciklama: 'Yüksek sesle "Yangın var!" diye seslen ve binadan çıkmaya başla. Güvenli bir yere ulaşınca 112’yi ara.' },
+        { ikon: 'arrow-down-bold-outline', baslik: 'Dumanın altından eğilerek ilerle.', aciklama: 'Duman ve zehirli gazlar önce tavanda birikir. Yere yakın, eğilerek veya emekleyerek çıkışa git.' },
+        { ikon: 'door', baslik: 'Kapıyı açmadan önce kontrol et.', aciklama: 'Kapıya ve koluna elinin tersiyle dokun. Sıcaksa veya kenarından duman geliyorsa açma; diğer çıkışı kullan.' },
+        { ikon: 'door-closed', baslik: 'Çıktığın kapıları kapat.', aciklama: 'Arkandaki kapıları kapatmak yangının ve dumanın yayılmasını yavaşlatır.' },
+        { ikon: 'fire', baslik: 'Giysin tutuşursa dur, yat, yuvarlan.', aciklama: 'Koşma; yere yat, yüzünü ellerinle kapat ve alevler sönene kadar yuvarlan.' },
+      ],
+      guvenliIpuclari: ['Sakin ve hızlı hareket et.', 'Çocukları yanından ayırma.', 'İkinci çıkış yolunu düşün.'],
+      kacinilmasiGerekenler: ['Eşya toplamak için oyalanma.', 'Dolap veya yatak altına saklanma.', 'Söndürmek için kendini riske atma.'],
+      ozelDurum: {
+        ikon: 'window-open-variant',
+        baslik: 'Odadan Çıkamıyorsan',
+        aciklama: 'Kapıyı kapalı tut ve aralıkları havlu veya kumaşla kapat. 112’yi ara ve pencereden açık renkli bir kumaş ya da fenerle yerini göster.',
+      },
+      kaynak: 'Red Cross • FEMA',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Bina Yangını Sonrası',
       ozet: 'Alevlerin sönmesi, binanın güvenli olduğu anlamına gelmez. Duman, hasarlı yapı ve elektrik tesisatı tehlike yaratmayı sürdürebilir.',
@@ -117,7 +179,27 @@ const insanKaynakliSenaryolar = [
       kaynak: 'Sağlık Bakanlığı · GOV.UK Highway Code',
       kontrolEdilecek: false,
     },
-    sonrasi: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    sonrasi: {
+      baslik: 'Trafik Kazası Sonrası',
+      ozet: 'Kazadan sonra iyi hissetsen bile bazı yaralanmaların belirtileri saatler sonra başlayabilir. Kendini izle ve gerekirse sağlık desteği al.',
+      yapilacaklar: [
+        { ikon: 'stethoscope', baslik: 'Sağlık kontrolünü erteleme.', aciklama: 'Başını çarptıysan, boynunda ağrı ya da uyuşma varsa sağlık kuruluşuna başvur. Belirtilerin geçmesini bekleme.' },
+        { ikon: 'clock-outline', baslik: 'Gecikmeli belirtileri izle.', aciklama: 'Boyun ağrısı ve tutulma kazadan saatler sonra başlayabilir. Kötüleşen ağrı, karıncalanma veya güçsüzlükte hemen yardım iste.' },
+        { ikon: 'car-off', baslik: 'Kendini iyi hissetmeden araç kullanma.', aciklama: 'Baş dönmesi, ağrı veya dikkat dağınıklığı varsa direksiyona geçme. Sağlık çalışanına danışmadan araç kullanmayı ertele.' },
+        { ikon: 'account-group-outline', baslik: 'Yakınlarına haber ver.', aciklama: 'Güvende olduğunu ve nerede olduğunu bildir. Seni eve güvenle götürecek birinden destek iste.' },
+        { ikon: 'clipboard-text-outline', baslik: 'Olayı ve belirtilerini not et.', aciklama: 'Kazanın saatini, nasıl olduğunu ve fark ettiğin belirtileri yaz. Bu bilgileri sağlık çalışanına aktar.' },
+      ],
+      guvenliIpuclari: ['Dinlenmeye zaman ayır.', 'Yanında biri kalsın.', 'Sağlık çalışanının önerisine uy.'],
+      kacinilmasiGerekenler: ['Ağrıyı önemsiz sayma.', 'Hasarlı aracı kontrol ettirmeden kullanma.', 'Belirtilerini saklama.'],
+      ozelDurum: {
+        ikon: 'alert-circle-outline',
+        baslik: 'Acil Belirtiler Görürsen',
+        aciklama: 'Kollarda veya bacaklarda güçsüzlük, yürüme ya da dik oturma güçlüğü, ağrı kesiciye rağmen geçmeyen şiddetli ağrı veya bilinç bulanıklığı olursa 112’yi ara.',
+      },
+      kaynak: 'NHS',
+      kontrolEdilecek: true,
+    },
   },
 ];
 
