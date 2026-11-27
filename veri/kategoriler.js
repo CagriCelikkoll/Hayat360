@@ -43,7 +43,7 @@ const kategoriler = [
     id: 'barinma',
     ad: 'Barınma ve Temel İhtiyaçlar',
     renk: '#0ED9C3',
-    ikon: 'home-roof', // Barınak / çatı
+    ikon: 'home-variant', // Dolu ev ikonu (barınak)
   },
 ];
 

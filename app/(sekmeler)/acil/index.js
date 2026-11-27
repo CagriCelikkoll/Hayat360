@@ -1,38 +1,88 @@
 // Bu dosya "Acil Durum" sekmesinin ilk ekranıdır (alt menünün ortasındaki sekme).
-// GEÇİCİ: Şimdilik veri/senaryolar/ klasöründeki senaryoları adlarıyla düz bir liste olarak gösterir;
-// bir senaryoya dokununca aynı klasördeki [id].js açılır.
-// İleride burası 7 kategorili asıl tasarımla değiştirilecek.
+// Üstte başlık ve çevrimdışı rozeti, altında arama kutusu vardır.
+// Arama boşken 7 kategori kartı, arama doluyken eşleşen senaryolar listelenir.
 
-import { Text, Pressable, ScrollView, StyleSheet } from 'react-native';
+import { useState } from 'react';
+import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
+
 import senaryolar from '../../../veri/senaryolar';
 import kategoriler from '../../../veri/kategoriler';
-import { renkler, yaziBoyutlari, bosluklar, koseler } from '../../../araclar/tema';
+import { senaryolariAra } from '../../../araclar/arama';
+import { renkler, yaziBoyutlari, bosluklar } from '../../../araclar/tema';
+
+import CevrimdisiRozet from '../../../bilesenler/CevrimdisiRozet';
+import AramaKutusu from '../../../bilesenler/AramaKutusu';
+import KategoriKarti from '../../../bilesenler/KategoriKarti';
+import SenaryoSatiri from '../../../bilesenler/SenaryoSatiri';
 
 export default function AcilDurum() {
   const router = useRouter();
 
+  // Arama kutusuna yazılan metin. Senaryo ekranından geri dönünce bu ekran
+  // silinmediği için yazılan metin olduğu gibi kalır.
+  const [aramaMetni, setAramaMetni] = useState('');
+
+  // Arama doluysa eşleşen senaryoları bul
+  const aramaYapiliyorMu = aramaMetni.trim() !== '';
+  const sonuclar = senaryolariAra(aramaMetni);
+
+  // Bir kategorideki senaryo sayısını hesaplar
+  function senaryoSayisi(kategoriId) {
+    return senaryolar.filter((senaryo) => senaryo.kategori === kategoriId).length;
+  }
+
+  // Kimliği verilen kategoriyi bulur (arama sonuçlarında renk ve ad için)
+  function kategoriBul(kategoriId) {
+    return kategoriler.find((kategori) => kategori.id === kategoriId);
+  }
+
   return (
     <SafeAreaView style={stiller.ekran} edges={['top']}>
-      <ScrollView contentContainerStyle={stiller.icerik}>
-        <Text style={stiller.baslik}>Acil Durum</Text>
+      <ScrollView contentContainerStyle={stiller.icerik} keyboardShouldPersistTaps="handled">
+        {/* Başlık ve çevrimdışı rozeti */}
+        <View style={stiller.ustSatir}>
+          <Text style={stiller.baslik}>Acil Durum</Text>
+          <CevrimdisiRozet renk={renkler.vurgu} />
+        </View>
 
-        {senaryolar.map((senaryo) => {
-          // Senaryonun kategorisini bul; kartın sol çizgisi o renkte olsun
-          const kategori = kategoriler.find((k) => k.id === senaryo.kategori);
+        <AramaKutusu metin={aramaMetni} metinDegisince={setAramaMetni} />
 
-          return (
-            <Pressable
-              key={senaryo.id}
-              style={[stiller.satir, { borderLeftColor: kategori.renk }]}
-              onPress={() => router.push(`/acil/${senaryo.id}`)}
-            >
-              <Text style={stiller.satirBaslik}>{senaryo.ad}</Text>
-              <Text style={stiller.satirKategori}>{kategori.ad}</Text>
-            </Pressable>
-          );
-        })}
+        {aramaYapiliyorMu ? (
+          // ARAMA DOLU: sonuç listesi
+          <View style={stiller.liste}>
+            <Text style={stiller.bolumBasligi}>{sonuclar.length} sonuç</Text>
+            {sonuclar.length === 0 ? (
+              <Text style={stiller.bosMesaj}>Bu aramayla eşleşen senaryo bulunamadı.</Text>
+            ) : null}
+            {sonuclar.map((senaryo) => {
+              const kategori = kategoriBul(senaryo.kategori);
+              return (
+                <SenaryoSatiri
+                  key={senaryo.id}
+                  senaryo={senaryo}
+                  renk={kategori.renk}
+                  altYazi={kategori.ad}
+                  dokununca={() => router.push(`/acil/${senaryo.id}`)}
+                />
+              );
+            })}
+          </View>
+        ) : (
+          // ARAMA BOŞ: 7 kategori kartı
+          <View style={stiller.liste}>
+            <Text style={stiller.bolumBasligi}>Kategoriler</Text>
+            {kategoriler.map((kategori) => (
+              <KategoriKarti
+                key={kategori.id}
+                kategori={kategori}
+                senaryoSayisi={senaryoSayisi(kategori.id)}
+                dokununca={() => router.push(`/acil/kategori/${kategori.id}`)}
+              />
+            ))}
+          </View>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
@@ -44,31 +94,31 @@ const stiller = StyleSheet.create({
     backgroundColor: renkler.arkaPlan,
   },
   icerik: {
-    padding: bosluklar.cokBuyuk,
+    paddingHorizontal: bosluklar.buyuk,
+    paddingBottom: bosluklar.cokBuyuk,
+  },
+  ustSatir: {
+    flexDirection: 'row', // Başlık solda, rozet sağda
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingTop: bosluklar.buyuk,
   },
   baslik: {
     color: renkler.yazi,
     fontSize: yaziBoyutlari.baslik,
     fontWeight: 'bold',
-    marginBottom: bosluklar.buyuk,
   },
-  satir: {
-    backgroundColor: renkler.kart,
-    borderColor: renkler.kartKenari,
-    borderWidth: 1,
-    borderLeftWidth: 5, // Soldaki kalın renkli çizgi
-    borderRadius: koseler.kart,
-    padding: bosluklar.buyuk,
+  liste: {
+    marginTop: bosluklar.cokBuyuk,
+  },
+  bolumBasligi: {
+    color: renkler.ikincilYazi,
+    fontSize: yaziBoyutlari.normal,
+    fontWeight: '600',
     marginBottom: bosluklar.orta,
   },
-  satirBaslik: {
-    color: renkler.yazi,
-    fontSize: yaziBoyutlari.orta,
-    fontWeight: 'bold',
-  },
-  satirKategori: {
+  bosMesaj: {
     color: renkler.ikincilYazi,
-    fontSize: yaziBoyutlari.kucuk,
-    marginTop: bosluklar.cokKucuk,
+    fontSize: yaziBoyutlari.normal,
   },
 });
