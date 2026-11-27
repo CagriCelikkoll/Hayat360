@@ -61,6 +61,35 @@ const insanKaynakliSenaryolar = [
       kontrolEdilecek: false,
     },
   },
+
+  // ===== referans/17 =====
+  {
+    id: 'bina-yangini',
+    kategori: 'insan-kaynakli',
+    ad: 'Bina Yangını',
+    ikon: 'office-building-outline',
+    durumAni: null, // Fotoğrafı yok
+    sonrasi: {
+      baslik: 'Bina Yangını Sonrası',
+      ozet: 'Alevlerin sönmesi, binanın güvenli olduğu anlamına gelmez. Duman, hasarlı yapı ve elektrik tesisatı tehlike yaratmayı sürdürebilir.',
+      yapilacaklar: [
+        { ikon: 'account-group', baslik: 'Güvenli buluşma yerinde kal.', aciklama: 'Binadan ve dumandan uzakta bekle. Yanındakileri say; eksik birinin son görüldüğü yeri itfaiyeye bildir, aramak için geri dönme.' },
+        { ikon: 'medical-bag', baslik: 'Sağlık durumunu bildir.', aciklama: 'Duman soluduysan veya yandıysan sağlık ekibine söyle. Ciddi nefes darlığı, göğüs ağrısı, bilinç bulanıklığı ya da ağır yanıkta 112’yi ara.' },
+        { ikon: 'door-closed-cancel', baslik: 'Binaya izinsiz girme.', aciklama: 'İtfaiye ve yetkililer güvenli olduğunu bildirmeden içeri girme. Güvenlik şeritlerini aşma; hasarlı duvarlara ve merdivenlere yaklaşma.' },
+        { ikon: 'tools', baslik: 'Tesisatı uzmanlara kontrol ettir.', aciklama: 'Elektrik ve gaz sistemlerini kendin yeniden çalıştırma. Hasarlı tesisat ve cihazlar, yetkili kişiler kontrol edip güvenli bulmadan kullanılmamalı.' },
+        { ikon: 'home-outline', baslik: 'Güvenli konaklama ayarla.', aciklama: 'Eve dönemiyorsan yakınlarınla veya yerel destek birimleriyle iletişim kur. Çocukları, yaşlıları ve hayvanları yangın alanından uzak tut.' },
+      ],
+      guvenliIpuclari: ['Yakınlarına güvende olduğunu bildir.', 'Ekiplerin geçiş yolunu açık tut.', 'İlaç ihtiyacını ekibe söyle.'],
+      kacinilmasiGerekenler: ['Eşya almak için dönme.', 'Dumana maruz kalan yiyeceği tüketme.', 'Hasarlı cihazları deneme.'],
+      ozelDurum: {
+        ikon: 'lungs',
+        baslik: 'Öksürük veya nefes darlığı sürerse',
+        aciklama: 'Dumandan uzaklaşınca düzelmeyen ya da artan şikayetleri sağlık uzmanına bildir. Solunum zorlaşırsa veya kişi uyandırılamıyorsa 112’yi ara; bekleyerek geçmesini umma.',
+      },
+      kaynak: 'American Red Cross • NHS',
+      kontrolEdilecek: false,
+    },
+  },
 ];
 
 export default insanKaynakliSenaryolar;
