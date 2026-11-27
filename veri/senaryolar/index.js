@@ -18,7 +18,8 @@
 // kacinilmasiGerekenler:  Kırmızı kutudaki 3 madde
 // ozelDurum:              Alttaki özel durum kartı { ikon, baslik, aciklama }
 // kaynak:                 En alttaki "Kaynak:" satırı
-// kontrolEdilecek:        true ise bu metni fotoğraftan değil biz yazdık; uzman kontrol etmeli
+// kontrolEdilecek:        true ise bu metni fotoğraftan değil biz yazdık; uzman kontrol etmeli.
+//                         Ekranda başlığın yanında sarı "Taslak" etiketi çıkar; KONTROL_LISTESI.md'de listelenir.
 
 import dogalAfetSenaryolari from './dogal-afetler';
 import insanKaynakliSenaryolar from './insan-kaynakli';

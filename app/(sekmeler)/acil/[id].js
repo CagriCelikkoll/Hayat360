@@ -70,6 +70,8 @@ export default function SenaryoEkrani() {
           baslik={icerik ? icerik.baslik : senaryo.ad}
           ozet={icerik ? icerik.ozet : null}
           renk={renk}
+          // Bu sekmeyi biz yazdıysak (kontrolEdilecek: true) başlıkta "Taslak" etiketi çıksın
+          taslakMi={icerik ? icerik.kontrolEdilecek === true : false}
         />
 
         {/* Durum Anı / Sonrası butonları. İçeriği olmayan sekme soluk ve dokunulamaz. */}

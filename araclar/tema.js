@@ -16,6 +16,7 @@ export const renkler = {
   guvenliZemin: '#0C3A2B', // "Güvenli İpuçları" kutusunun koyu yeşil zemini
   tehlike: '#E5394B', // "Kaçınılması Gerekenler" kutusunun kırmızısı (kenar ve ikon)
   tehlikeZemin: '#3A1323', // "Kaçınılması Gerekenler" kutusunun koyu kırmızı zemini
+  taslak: '#F5C542', // Uzman kontrolünden geçmemiş içeriğin "Taslak" etiketi (sarı)
   vurgu: '#E23A77', // Varsayılan vurgu rengi (Doğal Afetler pembesi)
 };
 

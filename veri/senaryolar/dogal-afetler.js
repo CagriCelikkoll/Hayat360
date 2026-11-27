@@ -1,5 +1,7 @@
 // Bu dosya "Doğal Afetler" kategorisinin senaryolarını tutar.
-// Metinler referans/ fotoğraflarından HARFİ HARFİNE aktarıldı; değiştirmeyin.
+// Fotoğraftan gelen metinler HARFİ HARFİNE aktarıldı; değiştirmeyin.
+// "TASLAK" yorumlu sekmeleri fotoğraf olmadığı için biz yazdık (kontrolEdilecek: true);
+// bunlar uzman kontrolünden geçene kadar ekranda sarı "Taslak" etiketiyle görünür.
 // Alanların ne anlama geldiği veri/senaryolar/index.js dosyasının başında yazıyor.
 
 const dogalAfetSenaryolari = [
@@ -9,7 +11,27 @@ const dogalAfetSenaryolari = [
     kategori: 'dogal-afetler',
     ad: 'Deprem',
     ikon: 'pulse',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Deprem Anında',
+      ozet: 'Sarsıntı sürerken dışarı koşma. Bulunduğun yerde çök, kapan, tutun; sarsıntı bitene kadar başını ve enseni koru.',
+      yapilacaklar: [
+        { ikon: 'table-furniture', baslik: 'Çök, kapan, tutun.', aciklama: 'Dizlerinin üzerine çök, başını ve enseni kollarınla koru. Yakınındaki sağlam masa veya sıraya tutun; sarsıntı bitene kadar bu pozisyonda kal.' },
+        { ikon: 'window-closed-variant', baslik: 'Camlardan ve devrilebilecek eşyalardan uzaklaş.', aciklama: 'Pencere, dolap ve raflardan uzak dur. Yakında masa yoksa iç duvarın yanında çök ve başını kollarınla koru.' },
+        { ikon: 'door-closed-cancel', baslik: 'Sarsıntı sırasında binadan çıkmaya çalışma.', aciklama: 'İçerideysen sarsıntı sürerken dışarı koşma; düşen parçalar ve camlar yaralayabilir. Sarsıntı bitene kadar olduğun yerde korun.' },
+        { ikon: 'bed-outline', baslik: 'Yataktaysan orada kal.', aciklama: 'Kıvrıl ve başını yastıkla koru. Sarsıntı bitene kadar kalkıp yürümeye çalışma.' },
+        { ikon: 'pine-tree', baslik: 'Dışarıdaysan açık alana geç.', aciklama: 'Binalardan, ağaçlardan, direklerden ve elektrik hatlarından uzaklaş. Açık bir yerde çök ve başını koru.' },
+      ],
+      guvenliIpuclari: ['Sakin kalmaya çalış.', 'Başını ve enseni koru.', 'Tekerlekli sandalyedeysen frenleri kilitle.'],
+      kacinilmasiGerekenler: ['Pencere kenarında durma.', 'Balkona çıkma.', 'Kapı eşiğinin güvenli olduğunu düşünme.'],
+      ozelDurum: {
+        ikon: 'car',
+        baslik: 'Araçtaysan',
+        aciklama: 'Binalardan, ağaçlardan, köprü ve üst geçitlerden ve elektrik hatlarından uzak, güvenli bir yerde dur. Sarsıntı bitene kadar aracın içinde kal.',
+      },
+      kaynak: 'AFAD • CDC • FEMA • Red Cross',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Deprem Sonrası',
       ozet: 'Artçılar, hasarlı yapılar ve gaz kaçakları tehlike yaratabilir. Önce kendi güvenliğini kontrol et.',
@@ -38,7 +60,27 @@ const dogalAfetSenaryolari = [
     kategori: 'dogal-afetler',
     ad: 'Sel',
     ikon: 'home-flood',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Sel Anında',
+      ozet: 'Sel suyu hızla yükselebilir ve akıntı insanı sürükleyebilir. Hemen yüksek ve güvenli bir yere çık; suya girme.',
+      yapilacaklar: [
+        { ikon: 'arrow-up-bold-outline', baslik: 'Hemen yüksek yere çık.', aciklama: 'Dere yataklarını ve çukur alanları terk et. Tahliye uyarısı geldiyse beklemeden yetkililerin gösterdiği yöne git.' },
+        { ikon: 'waves', baslik: 'Akan suya girme.', aciklama: 'Sel suyunda yürüme, yüzme veya araç kullanma. Sığ görünen akan su bile seni düşürüp sürükleyebilir.' },
+        { ikon: 'bridge', baslik: 'Hızlı akan suyun üzerindeki köprüden geçme.', aciklama: 'Akıntı köprüyü haber vermeden yıkabilir. Başka bir güzergâh bul veya güvenli yerde bekle.' },
+        { ikon: 'stairs-up', baslik: 'Binada mahsur kaldıysan üst kata çık.', aciklama: 'Su yükseliyorsa binanın en üst katına çık. Kapalı çatı arasına sıkışma; gerekirse çatıya çıkıp 112’den yardım iste.' },
+        { ikon: 'home-flood', baslik: 'Bodruma ve otoparka inme.', aciklama: 'Su dolmaya başlayan bodrumda eşya kurtarmaya ya da aracını çıkarmaya çalışma. Bu alanlar çok hızlı dolabilir.' },
+      ],
+      guvenliIpuclari: ['Yakınlarına konumunu bildir.', 'Değerli eşya için zaman kaybetme.', 'Çocukları yanından ayırma.'],
+      kacinilmasiGerekenler: ['Selin fotoğrafını çekmek için yaklaşma.', 'Kapatılmış yolun bariyerini aşma.', 'Dere kenarında bekleme.'],
+      ozelDurum: {
+        ikon: 'car',
+        baslik: 'Araçta Mahsur Kaldıysan',
+        aciklama: 'Araç hızlı akan suya kapıldıysa içinde kal. Su aracın içine doluyorsa çatıya çık ve 112’den yardım iste.',
+      },
+      kaynak: 'FEMA • NOAA / NWS',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Sel Sonrası',
       ozet: 'Suyun çekilmesi tehlikenin bittiğini göstermez. Elektrik, yapı hasarı ve kirlenmeye dikkat et.',
@@ -67,7 +109,27 @@ const dogalAfetSenaryolari = [
     kategori: 'dogal-afetler',
     ad: 'Tsunami',
     ikon: 'waves',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Tsunami Anında',
+      ozet: 'Kıyıda güçlü bir sarsıntı, denizin aniden çekilmesi veya denizden gelen gürültü tsunami işareti olabilir. Resmî uyarıyı beklemeden yüksek yere çık.',
+      yapilacaklar: [
+        { ikon: 'arrow-up-bold-outline', baslik: 'Hemen yüksek veya iç bölgelere git.', aciklama: 'Kıyıdan uzaklaş ve olabildiğince yüksek bir yere çık. Siren, anons veya mesaj gelmesini bekleme.' },
+        { ikon: 'table-furniture', baslik: 'Sarsıntıda önce korun.', aciklama: 'Kıyıdayken deprem olursa sarsıntı sürerken çök, kapan, tutun. Sarsıntı biter bitmez kıyıdan uzaklaş.' },
+        { ikon: 'eye-off-outline', baslik: 'Denizin çekildiği alana girme.', aciklama: 'Deniz aniden çekilirse açılan alana inme veya kıyıda bekleme. Dalgayı görebiliyorsan kaçmak için çok yakınsın demektir.' },
+        { ikon: 'sail-boat', baslik: 'Teknedeysen açık denize yönel.', aciklama: 'Açık denizdeysen dalgalara karşı açığa doğru ilerle. Limandaysan tekneyi bırakıp karada yüksek bir yere çık.' },
+        { ikon: 'account-group-outline', baslik: 'Yanındakileri de uyar.', aciklama: 'Çevrendekilere yüksek yere çıkmalarını söyle. Eşya toplamak için zaman kaybetme; can güvenliğini öncele.' },
+      ],
+      guvenliIpuclari: ['Kıyıya dik yönde uzaklaş.', 'Çocukları yanından ayırma.', 'Telefonunu yanına al.'],
+      kacinilmasiGerekenler: ['Kıyıda uyarı bekleme.', 'Kıyıya paralel ilerleme.', 'Dere yatağı boyunca ilerleme.'],
+      ozelDurum: {
+        ikon: 'bullhorn-outline',
+        baslik: 'Resmî Uyarı Gelirse',
+        aciklama: 'Sarsıntı hissetmesen bile tsunami uyarısı geldiyse yetkililerin tahliye talimatına hemen uy. Uzakta olan bir deprem de tsunamiye yol açabilir.',
+      },
+      kaynak: 'AFAD • FEMA • Red Cross • NOAA / NWS',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Tsunami Sonrası',
       ozet: 'İlk dalga son veya en büyük dalga olmayabilir. Kıyıdan uzaktaki güvenli bölgede kal.',
@@ -96,7 +158,27 @@ const dogalAfetSenaryolari = [
     kategori: 'dogal-afetler',
     ad: 'Fırtına',
     ikon: 'weather-windy',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Fırtına Anında',
+      ozet: 'Kuvvetli rüzgâr çatıları uçurabilir, ağaç ve direkleri devirebilir. Sağlam bir binada, camlardan uzak bir iç odada bekle.',
+      yapilacaklar: [
+        { ikon: 'home-outline', baslik: 'Sağlam bir binada kal.', aciklama: 'Zorunlu değilse dışarı çıkma. Prefabrik yapı, çadır ve karavan kuvvetli rüzgârda güvenli değildir.' },
+        { ikon: 'window-closed-variant', baslik: 'Camlardan uzak bir iç odaya geç.', aciklama: 'Binanın alt katındaki penceresiz, küçük bir odayı seç. Dış duvarlarla arana mümkün olduğunca çok duvar koy.' },
+        { ikon: 'table-furniture', baslik: 'Uçan parçalara karşı korun.', aciklama: 'Yere yakın dur ve sağlam bir masanın altına gir. Başını yastık, battaniye veya montla koru.' },
+        { ikon: 'car', baslik: 'Yoldaysan yavaşla.', aciklama: 'Direksiyonu iki elinle tut ve hızını düşür. Ağaç, köprü veya üst geçit altında durup sığınma.' },
+        { ikon: 'weather-lightning', baslik: 'Şimşek varsa elektrikli aletlerden uzak dur.', aciklama: 'Fişe takılı cihazları ve su tesisatını kullanma. Gök gürültüsü duyuyorsan dışarı çıkma.' },
+      ],
+      guvenliIpuclari: ['Telefonunu şarjlı tut.', 'Yakınlarına nerede olduğunu bildir.', 'Evcil hayvanları içeride tut.'],
+      kacinilmasiGerekenler: ['Ağaç altında bekleme.', 'Balkonda veya pencere önünde durma.', 'Uçan eşyayı yakalamaya çalışma.'],
+      ozelDurum: {
+        ikon: 'flash-alert',
+        baslik: 'Elektrik Kesilirse',
+        aciklama: 'Kapalı alanda jeneratör, mangal veya ızgara çalıştırma; karbonmonoksit zehirlenmesine yol açabilir. Baş ağrısı, baş dönmesi veya bulantı olursa hemen temiz havaya çık ve 112’yi ara.',
+      },
+      kaynak: 'NOAA / NWS • CDC • Red Cross',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Fırtına Sonrası',
       ozet: 'Kırık dallar, gevşeyen çatılar ve kopan kablolar tehlikelidir. Dışarı çıkmadan resmî uyarıları kontrol et.',
@@ -125,7 +207,27 @@ const dogalAfetSenaryolari = [
     kategori: 'dogal-afetler',
     ad: 'Yıldırım Tehlikesi',
     ikon: 'weather-lightning',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Yıldırım Tehlikesi Anında',
+      ozet: 'Gök gürültüsünü duyabiliyorsan yıldırım düşebilecek kadar yakınsın. Hemen sağlam bir binaya veya kapalı bir araca gir.',
+      yapilacaklar: [
+        { ikon: 'home-outline', baslik: 'Hemen kapalı bir yere gir.', aciklama: 'Duvarları ve çatısı olan sağlam bir bina seç. Açık sundurma, çardak ve çadırlar yıldırıma karşı korumaz.' },
+        { ikon: 'tree-outline', baslik: 'Ağaç altına sığınma.', aciklama: 'Tek başına duran ağaçlar tehlikelidir. Kapalı bir sığınağa ulaşana kadar ilerlemeye devam et.' },
+        { ikon: 'swim', baslik: 'Sudan hemen çık.', aciklama: 'Denizde, gölde veya havuzdaysan sudan çık ve kıyıdan uzaklaş. Teknedeysen en yakın kıyıya yönel.' },
+        { ikon: 'power-plug-off-outline', baslik: 'İçeride elektrik ve sudan uzak dur.', aciklama: 'Duş alma, bulaşık yıkama ve fişe takılı cihazları kullanma. Pencere ve kapılardan uzak dur.' },
+        { ikon: 'fence', baslik: 'Metal çit ve korkuluklardan uzaklaş.', aciklama: 'Metal çit, direk ve korkuluklara dokunma. Tepeler gibi yüksek ve açık noktalardan aşağı in.' },
+      ],
+      guvenliIpuclari: ['Gök gürültüsünü ciddiye al.', 'Araçtaysan camları kapat.', 'Çocukları içeri al.'],
+      kacinilmasiGerekenler: ['Yere yüzüstü uzanma.', 'Açık çardağa sığınma.', 'Kablolu sabit telefon kullanma.'],
+      ozelDurum: {
+        ikon: 'image-filter-hdr',
+        baslik: 'Açıkta Sığınak Bulamıyorsan',
+        aciklama: 'Yüksek noktalardan, ağaçlardan ve sudan uzaklaş. Yere uzanmadan çömel ve yere olabildiğince az temas et. Bu son çaredir; ilk fırsatta kapalı bir yere geç.',
+      },
+      kaynak: 'CDC • NOAA / NWS • Red Cross',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Yıldırım Tehlikesi Geçtikten Sonra',
       ozet: 'Yağmurun dinmesi tehlikenin bittiğini göstermez. Dışarı çıkmadan bekleme süresini tamamla; yaralanmada yardım iste.',
@@ -174,7 +276,27 @@ const dogalAfetSenaryolari = [
       kaynak: 'NOAA / NWS',
       kontrolEdilecek: false,
     },
-    sonrasi: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    sonrasi: {
+      baslik: 'Hortum Sonrası',
+      ozet: 'Hortum geçtikten sonra da devrilen yapılar, kopan kablolar ve keskin enkaz tehlikelidir. Önce yaralıları kontrol et.',
+      yapilacaklar: [
+        { ikon: 'medical-bag', baslik: 'Yaralanmaları kontrol et.', aciklama: 'Ciddi yaralanma varsa 112’yi ara. Hemen tehlikede değilse ağır yaralıyı yerinden oynatma.' },
+        { ikon: 'home-alert-outline', baslik: 'Hasarlı binaya girme.', aciklama: 'Yetkililer güvenli olduğunu bildirmeden içeri girme. İçerideyken çatırdama veya kayma sesi duyarsan hemen dışarı çık.' },
+        { ikon: 'power-plug-off-outline', baslik: 'Kopan kablolara dokunma.', aciklama: 'Yerdeki her kabloyu elektrik taşıyor kabul et. Kablo aracının üzerine düştüyse araçtan çıkma ve yardım iste.' },
+        { ikon: 'shoe-print', baslik: 'Enkazda korunarak hareket et.', aciklama: 'Sağlam ayakkabı, uzun pantolon ve eldiven giy. Kırık cam ve çıkıntılı çivilere dikkat et.' },
+        { ikon: 'account-group-outline', baslik: 'Yakınlarına haber ver.', aciklama: 'Güvende olduğunu kısa mesajla bildir. Hatları meşgul etmemek için gereksiz arama yapma.' },
+      ],
+      guvenliIpuclari: ['Aydınlatma için fener kullan.', 'Gereksiz yolculuk yapma.', 'Hasarı güvenli yerden kaydet.'],
+      kacinilmasiGerekenler: ['Mum yakma.', 'Kapalı alanda jeneratör çalıştırma.', 'Enkazı tek başına kaldırmaya çalışma.'],
+      ozelDurum: {
+        ikon: 'fire-alert',
+        baslik: 'Gaz Kokusu veya Yangın Varsa',
+        aciklama: 'Binayı hemen terk et ve güvenli yerden 112’yi ara. Kıvılcım çıkarabilecek düğme, çakmak veya kibrit kullanma.',
+      },
+      kaynak: 'CDC • NOAA / NWS • Red Cross',
+      kontrolEdilecek: true,
+    },
   },
 
   // ===== referans/30 =====
@@ -183,7 +305,27 @@ const dogalAfetSenaryolari = [
     kategori: 'dogal-afetler',
     ad: 'Heyelan',
     ikon: 'landslide',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Heyelan Anında',
+      ozet: 'Toprak ve kaya kayması çok hızlı ilerleyebilir. Eşyalarını bırak; kaymanın yolundan çıkıp yüksek ve güvenli bir yere git.',
+      yapilacaklar: [
+        { ikon: 'arrow-top-right-thick', baslik: 'Kaymanın yolundan çık.', aciklama: 'Kaymanın geldiği yönden yana doğru uzaklaş ve en yakın yüksek yere çık. Beklemeden hareket et.' },
+        { ikon: 'table-furniture', baslik: 'Çıkamıyorsan içeride korun.', aciklama: 'Binadan çıkacak zamanın yoksa içeride kal. Sağlam bir eşyanın yanında çök, kapan, tutun.' },
+        { ikon: 'bridge', baslik: 'Çamur akan yoldan veya köprüden geçme.', aciklama: 'Üzerinden su veya çamur akan yolu geçmeye çalışma. Yaklaşan bir akış görürsen köprüye çıkma.' },
+        { ikon: 'car', baslik: 'Araçtaysan yoldaki işaretlere dikkat et.', aciklama: 'Yola düşen taş, çamur veya çökmüş asfalt görürsen ilerleme. Yamaç dibinde bekleme; güvenli bir yere dön.' },
+        { ikon: 'account-group-outline', baslik: 'Çevrendekileri uyar.', aciklama: 'Kaymayı fark edersen yakınındakilere bağırarak haber ver. Herkesin yüksek ve güvenli yere ilerlemesini sağla.' },
+      ],
+      guvenliIpuclari: ['Hemen hareket et.', 'Çocukları yanından ayırma.', 'Telefonunu yanına al.'],
+      kacinilmasiGerekenler: ['Kaymayı izlemek için durma.', 'Eşya kurtarmak için geri dönme.', 'Dere yatağında bekleme.'],
+      ozelDurum: {
+        ikon: 'shield-account-outline',
+        baslik: 'Kaçamıyorsan',
+        aciklama: 'Kaçış mümkün değilse sıkıca kıvrıl ve başını kollarınla koru. Kurtulduğunda kendini kontrol et ve 112’den yardım iste.',
+      },
+      kaynak: 'AFAD • CDC • FEMA • USGS',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Heyelan Sonrası',
       ozet: 'Toprak hareketi durmuş görünse bile yeni kaymalar ve su baskınları gelişebilir. Güvenli bölgede kal; dönüş için acele etme.',
