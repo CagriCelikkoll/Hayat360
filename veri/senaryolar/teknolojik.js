@@ -1,5 +1,7 @@
 // Bu dosya "Teknolojik ve Sistemsel Krizler" kategorisinin senaryolarını tutar.
-// Metinler referans/ fotoğraflarından HARFİ HARFİNE aktarıldı; değiştirmeyin.
+// Fotoğraftan gelen metinler HARFİ HARFİNE aktarıldı; değiştirmeyin.
+// "TASLAK" yorumlu sekmeleri fotoğraf olmadığı için biz yazdık (kontrolEdilecek: true);
+// bunlar uzman kontrolünden geçene kadar ekranda sarı "Taslak" etiketiyle görünür.
 // Alanların ne anlama geldiği veri/senaryolar/index.js dosyasının başında yazıyor.
 
 const teknolojikSenaryolar = [
@@ -9,7 +11,27 @@ const teknolojikSenaryolar = [
     kategori: 'teknolojik',
     ad: 'Kopmuş Elektrik Hattı',
     ikon: 'transmission-tower',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Kopmuş Elektrik Hattı Gördüm',
+      ozet: 'Yere düşmüş veya sarkan her kabloyu elektrik taşıyor kabul et. Kabloya ve dokunduğu hiçbir şeye yaklaşma; güvenli uzaklıktan haber ver.',
+      yapilacaklar: [
+        { ikon: 'flash-alert', baslik: 'Kabloyu elektrik taşıyor kabul et.', aciklama: 'Hareketsiz veya sessiz görünse bile kablo enerjili olabilir; yakınından geçme.' },
+        { ikon: 'arrow-expand-all', baslik: 'Güvenli mesafede dur.', aciklama: 'Kablodan ve dokunduğu çit, araç veya su birikintisi gibi her şeyden uzak dur.' },
+        { ikon: 'phone-in-talk', baslik: 'Güvenli uzaklıktan 112’ye bildir.', aciklama: 'Kablonun yerini ve çevredeki tehlikeleri anlat. Yaralı varsa bunu da söyle.' },
+        { ikon: 'car', baslik: 'Kablo aracına düştüyse içeride kal.', aciklama: 'Dışarıdakilere araca dokunmamalarını söyle. Araç çalışıyorsa kablodan uzaklaşacak şekilde sürmeye devam et.' },
+        { ikon: 'road-variant', baslik: 'Kablonun üzerinden geçme.', aciklama: 'Yürürken veya araç kullanırken yere düşmüş kablonun üzerinden geçmeye çalışma; başka bir yol kullan.' },
+      ],
+      guvenliIpuclari: ['Sakin kal ve geri çekil.', 'Kablonun yerini aklında tut.', 'Yetkililer gelene kadar uzakta bekle.'],
+      kacinilmasiGerekenler: ['Kabloyu sopayla itmeye çalışma.', 'Kablonun dokunduğu araca veya çite dokunma.', 'Yaklaşıp fotoğraf çekme.'],
+      ozelDurum: {
+        ikon: 'fire-alert',
+        baslik: 'Araç Yanmaya Başlarsa',
+        aciklama: 'Araç alev almadıkça içeride kal. Yangın nedeniyle çıkman gerekirse araca ve yere aynı anda dokunmadan çık, kablodan uzaklaş ve 112’yi ara.',
+      },
+      kaynak: 'CDC • Red Cross • FEMA',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Kopmuş Elektrik Hattı Sonrası',
       ozet: 'Kabloya artık kıvılcım çıkarmıyor diye yaklaşma. Alanın güvenli olduğuna yetkili elektrik ekibi karar verir; onay gelene kadar uzak kal.',
@@ -38,7 +60,27 @@ const teknolojikSenaryolar = [
     kategori: 'teknolojik',
     ad: 'Elektrik Kesintisi',
     ikon: 'power-plug',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Elektrik Kesildi',
+      ozet: 'Kesinti sırasında asıl tehlike mum, jeneratör ve ısıtıcıların yanlış kullanılmasıdır. Güvenli aydınlatma kullan ve gıdalarını korumaya çalış.',
+      yapilacaklar: [
+        { ikon: 'flashlight', baslik: 'Mum yerine fener kullan.', aciklama: 'Aydınlatma için pilli veya şarjlı fener kullan. Mum yangına yol açabilir.' },
+        { ikon: 'fridge-outline', baslik: 'Buzdolabının kapağını kapalı tut.', aciklama: 'Buzdolabını ve dondurucuyu gerekmedikçe açma; böylece içindekiler daha uzun süre soğuk kalır.' },
+        { ikon: 'power-plug-off-outline', baslik: 'Cihazların fişini çek.', aciklama: 'Elektrik geri geldiğinde oluşabilecek dalgalanmaya karşı cihazları kapat veya fişten çek. Elektriğin geldiğini anlamak için bir lambayı açık bırakabilirsin.' },
+        { ikon: 'engine-outline', baslik: 'Jeneratörü içeride çalıştırma.', aciklama: 'Jeneratörü yalnızca dışarıda, pencere, kapı ve havalandırma deliklerinden uzakta çalıştır.' },
+        { ikon: 'medical-bag', baslik: 'Elektrikli tıbbi cihazları düşün.', aciklama: 'Evde elektrikle çalışan tıbbi cihaz kullanan biri varsa ve cihaz çalışmıyorsa 112’den yardım iste.' },
+      ],
+      guvenliIpuclari: ['Telefon pilini idareli kullan.', 'Üşüyorsan kat kat giyin.', 'Yaşlı komşularının durumunu sor.'],
+      kacinilmasiGerekenler: ['Evi fırın veya ocakla ısıtmaya çalışma.', 'Kapalı alanda mangal yakma.', 'Arızaya kendin müdahale etme.'],
+      ozelDurum: {
+        ikon: 'home-thermometer-outline',
+        baslik: 'Kesinti Uzun Sürerse',
+        aciklama: 'Ev çok soğur veya çok ısınırsa, yolculuk güvenliyse elektriği olan bir yakınına ya da yetkililerin açtığı merkezlere geç.',
+      },
+      kaynak: 'CDC • FEMA • Red Cross',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Elektrik Geldikten Sonra',
       ozet: 'Elektriğin gelmesi hasarlı tesisatı veya bozulmuş gıdayı güvenli yapmaz. Cihazları kullanmadan önce kontrol et.',
@@ -67,7 +109,27 @@ const teknolojikSenaryolar = [
     kategori: 'teknolojik',
     ad: 'İletişim Kesintisi',
     ikon: 'radio-tower',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'İletişim Kesildi',
+      ozet: 'Afetlerde telefon ve internet hatları çökebilir veya aşırı yüklenebilir. Hatları yalnızca acil durumda kullan; arama yerine mesajı tercih et.',
+      yapilacaklar: [
+        { ikon: 'message-text-outline', baslik: 'Arama yerine kısa mesaj dene.', aciklama: 'Sesli arama geçmiyorsa SMS veya internet üzerinden mesajlaşmayı dene; mesajlar daha kolay ulaşabilir.' },
+        { ikon: 'phone-in-talk', baslik: 'Hayati tehlikede 112’den vazgeçme.', aciklama: 'Hat meşgulse kısa aralarla yeniden dene.' },
+        { ikon: 'radio', baslik: 'Pilli radyodan duyuruları dinle.', aciklama: 'Telefon ve internet çalışmıyorsa resmî açıklamaları pilli radyodan takip et.' },
+        { ikon: 'map-marker-outline', baslik: 'Kararlaştırdığınız buluşma yerine git.', aciklama: 'Ailenle iletişim kuramıyorsan ve yol güvenliyse önceden belirlediğiniz buluşma noktasına git.' },
+        { ikon: 'account-group-outline', baslik: 'Yakınındakilerle bilgi paylaş.', aciklama: 'Komşularınla ve görevlilerle konuşarak bilgi al; duyduklarını resmî kaynaktan doğrula.' },
+      ],
+      guvenliIpuclari: ['Mesajlarını kısa ve net yaz.', 'Konum bilgisini mesaja ekle.', 'Sakin kal ve bekle.'],
+      kacinilmasiGerekenler: ['Sesli aramada ısrar etme.', 'Telefonu oyun veya video için kullanma.', 'Kimseye haber vermeden yerinden ayrılma.'],
+      ozelDurum: {
+        ikon: 'whistle-outline',
+        baslik: 'Yardım Çağırman Gerekirse',
+        aciklama: 'Telefon çalışmıyorsa düdük, fener veya sesinle çevrendekilere ulaşmaya çalış; görevlilere yerini bildir.',
+      },
+      kaynak: 'AFAD • Kızılay',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'İletişim Yeniden Kurulduğunda',
       ozet: 'Bağlantı kurulunca acil ihtiyacını ve konumunu bildir. Aileni kısa mesajla bilgilendir; pilini koru.',
@@ -116,7 +178,27 @@ const teknolojikSenaryolar = [
       kaynak: 'London Fire Brigade • EPA',
       kontrolEdilecek: false,
     },
-    sonrasi: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    sonrasi: {
+      baslik: 'Şişen Pil Sonrası',
+      ozet: 'Hasarlı pil, kullanılmadığında da ısınabilir veya alev alabilir. Teslim edene kadar güvenli bir yerde sakla.',
+      yapilacaklar: [
+        { ikon: 'package-variant', baslik: 'Yanmaz bir kapta sakla.', aciklama: 'Cihazı kum veya kedi kumu dolu metal bir kovaya ya da yanmaz bir kaba koy.' },
+        { ikon: 'home-export-outline', baslik: 'Yanıcı eşyalardan uzak tut.', aciklama: 'Kabı perde, kâğıt ve kumaş gibi yanıcı eşyalardan uzakta, mümkünse serin bir yerde tut.' },
+        { ikon: 'battery-off-outline', baslik: 'Başka pillerle bir araya koyma.', aciklama: 'Hasarlı pili diğer pillerden ve cihazlardan ayrı tut.' },
+        { ikon: 'thermometer-alert', baslik: 'Isınma ve kokuya dikkat et.', aciklama: 'Kaptaki cihaz ısınır, ses çıkarır, duman veya koku yayarsa yanına yaklaşma ve 112’yi ara.' },
+        { ikon: 'power-plug-off-outline', baslik: 'Diğer cihazlarını kontrol et.', aciklama: 'Aynı şarj aletiyle şarj ettiğin cihazlarda şişme, aşırı ısınma veya hasar olup olmadığına bak.' },
+      ],
+      guvenliIpuclari: ['Cihazı teslim edene kadar kullanma.', 'Kabın yerini ev halkına söyle.', 'Teslim yerini önceden sor.'],
+      kacinilmasiGerekenler: ['Cihazı yatak veya koltuk üstünde bırakma.', 'Kabı güneş altında bırakma.', 'Pili bantlayıp kullanmaya devam etme.'],
+      ozelDurum: {
+        ikon: 'alert',
+        baslik: 'Taşıman Gerekirse',
+        aciklama: 'Servisin önerdiği şekilde, yanmaz bir kapta ve yanında yanıcı eşya olmadan taşı. Cihazı cebinde veya çantanın içinde taşıma.',
+      },
+      kaynak: 'EPA • NFPA',
+      kontrolEdilecek: true,
+    },
   },
 
   // ===== referans/33 =====
@@ -125,7 +207,27 @@ const teknolojikSenaryolar = [
     kategori: 'teknolojik',
     ad: 'Karbonmonoksit Şüphesi',
     ikon: 'molecule-co',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Karbonmonoksit Şüphesi Anında',
+      ozet: 'Karbonmonoksit kokusuz ve renksizdir; baş ağrısı, bulantı ve baş dönmesi ilk belirtiler olabilir. Hemen temiz havaya çık ve 112’yi ara.',
+      yapilacaklar: [
+        { ikon: 'exit-run', baslik: 'Herkesi hemen dışarı çıkar.', aciklama: 'Yanındakileri ve evcil hayvanları alıp temiz havaya çık. Uyuyanları uyandır.' },
+        { ikon: 'window-open-variant', baslik: 'Çıkarken pencere ve kapıları aç.', aciklama: 'Ortamı havalandır ama bunun için içeride oyalanma.' },
+        { ikon: 'phone-in-talk', baslik: 'Dışarıdan 112’yi ara.', aciklama: 'Temiz havaya ulaşınca 112’yi ara ve karbonmonoksit şüphesini söyle.' },
+        { ikon: 'lightbulb-off-outline', baslik: 'Elektrik düğmelerine dokunma.', aciklama: 'Ortamda gaz da olabilir; ışık açıp kapatma.' },
+        { ikon: 'stove', baslik: 'Kaynağı bulmak için içeride kalma.', aciklama: 'Soba, şofben veya jeneratörü kontrol etmeyi yetkili ekiplere bırak.' },
+      ],
+      guvenliIpuclari: ['Yardım ederken kendi güvenliğini koru.', 'Belirtileri grip sanma.', 'Açık havada bekle.'],
+      kacinilmasiGerekenler: ['İçeride uyumaya devam etme.', 'Kapalı odada yardım beklemeye kalma.', 'Kapalı alanda mangal veya jeneratör çalıştırma.'],
+      ozelDurum: {
+        ikon: 'heart-pulse',
+        baslik: 'Kişi Bilinçsizse',
+        aciklama: 'Kendini tehlikeye atmadan kişiyi temiz havaya çıkar. Nefes almıyorsa 112’nin yönlendirmesiyle temel yaşam desteğine başla.',
+      },
+      kaynak: 'Hacettepe Ü. Halk Sağlığı • CDC • Red Cross',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Karbonmonoksit Şüphesi Sonrası',
       ozet: 'Dışarı çıkınca rahatlaman, tehlikenin geçtiğini göstermez. Açık havada kal ve karbonmonoksit şüphesini acil yardım ekibine bildir.',

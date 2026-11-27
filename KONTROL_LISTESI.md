@@ -1,5 +1,31 @@
 # Kontrol Listesi
 
+## Öğretmen için özet
+
+- **Toplam:** 33 senaryo × 2 sekme = 66 sekme. Bunların **33'ü fotoğraftan harfi harfine** aktarıldı,
+  **33'ü fotoğraf olmadığı için resmi kaynaklara dayanarak yazıldı** (uygulamada sarı "Taslak" etiketiyle
+  görünür, veride `kontrolEdilecek: true`). Her senaryonun bir sekmesi fotoğraftan, diğeri taslaktır.
+- **Türk resmi kaynağına hiç dayanmayan 17 taslak sekme** (ABD/İngiltere kurumlarına dayanıyor):
+  Sel, Fırtına, Yıldırım Tehlikesi, Hortum (Sonrası), Bina Yangını, Trafik Kazası (Sonrası),
+  Tipide Mahsur Kalma, Asansörde Mahsur Kalma, Rip Akıntısı (Sonrası), Suda Boğulma,
+  Burun Kanaması (Sonrası), Doğada Kaybolma, Kopmuş Elektrik Hattı, Elektrik Kesintisi,
+  Şişen Telefon Pili (Sonrası), Soğukta Barınma, Kesintide Gıda Güvenliği.
+  (Parantez yoksa yazılan sekme "Durum Anı"dır.)
+- **Türk kaynağı yalnızca haber sitelerinden okunabilenler:** Tsunami (AFAD açıklaması), Doğal Gaz Kaçağı
+  (GAZBİR/İGDAŞ), Orman Yangını (OGM), İletişim Kesintisi (AFAD), İnme Şüphesi (Sağlık Bakanlığı uyarısı;
+  kaynak satırında yalnızca MEB var).
+- **Bilerek yazılmayan numaralar** (kural: fotoğrafta olmayan numara yazılmaz; uygulamada sadece 112 ve
+  fotoğraftaki 187 var):
+  - **114** – Ulusal Zehir Danışma Merkezi (Yılan Isırığı için kaynaklarda öneriliyor)
+  - **177** – Orman Yangın İhbar Hattı (Orman Yangını için)
+  - **186** – Elektrik arıza hattı (Kopmuş Elektrik Hattı ve Elektrik Kesintisi için)
+  Uzman uygun görürse bu numaralar ilgili sekmelere eklenebilir.
+- **Bilerek yazılmayan süre ve dozlar:** Turnike süresi, burun kanaması sonrası sümkürmeme süresi, tipide
+  motoru çalıştırma süresi, suyu klorla arıtma ölçüsü. Kaynaklar çelişkili olduğu veya tıbbi ayrıntı olduğu
+  için yazılmadı. Tek istisna: suyu "en az bir dakika" kaynatma (CDC).
+
+---
+
 Bu dosya, bir öğretmen veya uzmanın AFAD ve Kızılay kaynaklarıyla kontrol etmesi gereken içerikleri listeler.
 İki tür madde vardır:
 - **Bizim yazdığımız içerik:** Fotoğrafta olmayan, uygulamaya eklenmiş metin (veride `kontrolEdilecek: true`).
@@ -64,7 +90,45 @@ yapılmalı ve satır buradan silinmeli.
 | Kene Tutunması | Sonrası | Sağlık Bakanlığı • CDC | [Sağlık Bakanlığı HSGM: KKKA](https://hsgm.saglik.gov.tr/tr/zoonotik-ve-vektorel-hastaliklar/kkka.html), [Sağlık Bakanlığı: KKKA Uyarı ve Önlemler](https://www.saglik.gov.tr/TR-55309/kirim-kongo-kanamali-atesi--uyari-ve-onlemler.html), [Atakum İlçe Sağlık Müdürlüğü](https://atakumsm.saglik.gov.tr/TR-251433/kene-icin-tedbiri-elden-birakmayalim.html), [HSGM: KKKA okul eğitimi (PDF)](https://hsgm.saglik.gov.tr/depo/birimler/zoonotik-ve-vektorel-hastaliklar-db/Dokumanlar/Sunumlar/KKKA_okul_egitim_2023.pdf) |
 | Orman Yangını | Durum Anı | Red Cross • CDC • OGM | [Red Cross: If a Wildfire Threatens](https://www.redcross.org/about-us/news-and-events/news/2019/how-to-stay-safe-if-a-wildfire-threatens.html), [CDC: Wildfires and Wildfire Smoke](https://www.cdc.gov/wildfires/safety/how-to-safely-stay-safe-during-a-wildfire.html), OGM'nin "en küçük dumanı 112'ye bildirin" açıklaması ([BirGün haberi](https://www.birgun.net/haber/orman-genel-mudurlugu-yanginda-onemli-olan-karadan-mudahale-392857)), [TEMA: Yangın Sırasında](https://tema.org.tr/en/our-works/forest/before-forest-fires/during-forest-fires) |
 
-### Uzmanın özellikle bakması gerekenler
+### Teknolojik ve Sistemsel Krizler (`veri/senaryolar/teknolojik.js`)
+
+| Senaryo | Sekme | Kaynak satırı | Dayanılan sayfalar |
+|---|---|---|---|
+| Kopmuş Elektrik Hattı | Durum Anı | CDC • Red Cross • FEMA | [CDC: Electrical Hazards](https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-from-electrical-hazards.html), [Red Cross: Power Outage Safety](https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/power-outage.html), [Ready.gov (FEMA): Car Safety](https://www.ready.gov/car), [CDC: Electrical Safety During a Hurricane](https://tools.cdc.gov/podcasts/media/pdf/Hurricane_ElecSafety_30.pdf) |
+| Elektrik Kesintisi | Durum Anı | CDC • FEMA • Red Cross | [Ready.gov (FEMA): Power Outages](https://www.ready.gov/power-outages), [CDC: During a Power Outage](https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html), [CDC: Keep Food Safe](https://www.cdc.gov/food-safety/foods/keep-food-safe-after-emergency.html), [Red Cross: Winter Storm](https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/winter-storm.html); Türkçe: [Dicle EDAŞ uyarısı (haber)](https://www.yeniakit.com.tr/haber/dicle-edastan-arizalara-bireysel-mudahale-etmeyin-uyarisi--573797.html), [Sözcü](https://www.sozcu.com.tr/elektrik-kesildiginde-8-hatayi-asla-yapmayin-cok-tehlikeli-p190613) |
+| İletişim Kesintisi | Durum Anı | AFAD • Kızılay | AFAD'ın "SMS ve internet tercih edin" açıklaması ([Habertürk](https://www.haberturk.com/son-dakika-afad-deprem-sonrasi-sms-ve-internetin-tercih-edilmesini-tavsiye-etti-2853633-teknoloji), [TGRT](https://www.tgrthaber.com/gundem/afaddan-deprem-uyarisi-internet-ve-smssi-tercih-edin-2751117)), [Türk Kızılay: Afette İlk 72 Saat](https://afetyonetimi.kizilay.org.tr/tr/afette-ilk-72-saat/aile.html) |
+| Şişen Telefon Pili | Sonrası | EPA • NFPA | [EPA: Lithium-Ion Batteries FAQ](https://www.epa.gov/recycle/frequent-questions-lithium-ion-batteries), [EPA: Damaged Batteries (PDF)](https://www.epa.gov/system/files/documents/2026-05/collecting_household_small_format_damaged_and_defective_batteries.pdf), [NFPA: Lithium-Ion Battery Safety](https://www.nfpa.org/education-and-research/energy-transition/lithium-ion-batteries) |
+| Karbonmonoksit Şüphesi | Durum Anı | Hacettepe Ü. Halk Sağlığı • CDC • Red Cross | [Hacettepe Halk Sağlığı: CO bilgi notu (PDF)](https://halksagligi.hacettepe.edu.tr/duyurular/halkayonelik/cobilginotu2026.pdf), [Hacettepe: CO zehirlenmeleri (PDF)](https://halksagligi.hacettepe.edu.tr/diger/toplumayonelik/cozehir.pdf), [CDC: During a Power Outage](https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html), [Red Cross: Winter Storm](https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/winter-storm.html) |
+
+### Barınma ve Temel İhtiyaçlar (`veri/senaryolar/barinma.js`)
+
+| Senaryo | Sekme | Kaynak satırı | Dayanılan sayfalar |
+|---|---|---|---|
+| Soğukta Barınma | Durum Anı | CDC • FEMA • Red Cross | [CDC: Preventing Hypothermia](https://www.cdc.gov/winter-weather/prevention/index.html), [Ready.gov (FEMA): Stay Safe and Warm Toolkit](https://www.ready.gov/sites/default/files/2026-01/ready_toolkit_stay-safe-and-warm_01272026.pdf), [Red Cross: Winter Storm](https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/winter-storm.html), [Red Cross: Hypothermia](https://www.redcross.org/take-a-class/resources/learn-first-aid/hypothermia) |
+| Kesintide Gıda Güvenliği | Durum Anı | CDC • FEMA | [CDC: Keep Food Safe After a Disaster](https://www.cdc.gov/food-safety/foods/keep-food-safe-after-emergency.html), [Ready.gov (FEMA): Food](https://www.ready.gov/food), [Ready.gov (FEMA): Power Outages](https://www.ready.gov/power-outages) |
+| Temiz Su İhtiyacı | Durum Anı | CDC • Kızılay | [CDC: Make Water Safe During an Emergency (PDF)](https://www.cdc.gov/water-emergency/media/pdfs/make-water-safe-during-emergency-p.pdf), [CDC: Drinking Water Advisories](https://www.cdc.gov/water-emergency/about/drinking-water-advisories-an-overview.html), [Türk Kızılay: Afette İlk 72 Saat](https://afetyonetimi.kizilay.org.tr/tr/afette-ilk-72-saat/aile.html), [Türk Kızılay: Afetlerde Beslenme Hizmetleri Kılavuzu (PDF)](https://www.kizilay.org.tr/Upload/Dokuman/Dosya/86107045_afetlerde-beslenme-hizmetleri-kilavuzu.pdf) |
+| Güvenli Barınak Arama | Sonrası | CDC • Hacettepe Ü. Halk Sağlığı | [CDC: Staying Safe at a Disaster Shelter](https://www.cdc.gov/natural-disasters/safety/staying-safe-at-a-disaster-shelter.html), [Hacettepe Halk Sağlığı: Toplu barınma alanı notu (PDF)](https://halksagligi.hacettepe.edu.tr/duyurularogrenci/afetbilgi/nottoplubarinmaalani.pdf) |
+
+### Teknolojik ve Barınma için notlar
+
+- **Kopmuş Elektrik Hattı → "Araç Yanmaya Başlarsa" kartı:** "Araca ve yere aynı anda dokunmadan çık"
+  ifadesi CDC'nin eski (2004) bir belgesine dayanıyor; güncel CDC sayfası sadece "araç yanmadıkça içeride
+  kal" diyor. Uzman kontrol etmeli.
+- **Elektrik Kesintisi:** Elektrik dağıtım şirketlerinin veya TEDAŞ'ın resmi uyarı metnine ulaşamadım;
+  Türkçe kaynaklar haber siteleri. Arıza hattı numarası kural gereği yazılmadı.
+- **İletişim Kesintisi:** AFAD'ın "SMS ve internet tercih edin" önerisini haber sitelerinden okudum;
+  AFAD veya BTK sitesinde birebir görmedim.
+- **Karbonmonoksit Şüphesi ve Güvenli Barınak (Sonrası):** Türk kaynağı olarak Hacettepe Üniversitesi Halk
+  Sağlığı Anabilim Dalı'nın halka yönelik notları kullanıldı. Sağlık Bakanlığı'nın karbonmonoksit eğitim
+  setini buldum ama yalnızca bir kısmını görebildim; kaynak satırına yazmadım.
+- **Temiz Su → "en az bir dakika kaynat":** CDC'nin süresi. Fotoğraf dışından yazılan tek süre budur;
+  CDC'de açıkça geçtiği için yazıldı.
+- **Güvenli Barınak (Sonrası) → "Zorlanırsan destek iste":** Sağlık Bakanlığı'nın depremzedelerin ruh sağlığı
+  sayfasını buldum ama içeriğini okuyamadım; madde genel tutuldu.
+- **Soğukta Barınma ve Kesintide Gıda Güvenliği:** Türk resmi kaynağı bulunamadı (MEB'in hipotermi
+  önerileri fotoğraftaki Sonrası sekmesiyle örtüştüğü için tekrar edilmedi).
+
+### Sağlık ve Doğa Şartları için notlar
 
 - **Bu turdaki numaralar:** Kaynaklarda yılan ısırığı için Ulusal Zehir Danışma Merkezi'nin, orman yangını için
   Orman Yangın İhbar Hattı'nın ayrı numaraları geçiyor. Kural gereği (fotoğrafta olmayan numara yazılmaz)

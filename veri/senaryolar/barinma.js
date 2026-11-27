@@ -1,5 +1,7 @@
 // Bu dosya "Barınma ve Temel İhtiyaçlar" kategorisinin senaryolarını tutar.
-// Metinler referans/ fotoğraflarından HARFİ HARFİNE aktarıldı; değiştirmeyin.
+// Fotoğraftan gelen metinler HARFİ HARFİNE aktarıldı; değiştirmeyin.
+// "TASLAK" yorumlu sekmeleri fotoğraf olmadığı için biz yazdık (kontrolEdilecek: true);
+// bunlar uzman kontrolünden geçene kadar ekranda sarı "Taslak" etiketiyle görünür.
 // Alanların ne anlama geldiği veri/senaryolar/index.js dosyasının başında yazıyor.
 
 const barinmaSenaryolari = [
@@ -9,7 +11,27 @@ const barinmaSenaryolari = [
     kategori: 'barinma',
     ad: 'Soğukta Barınma',
     ikon: 'home-thermometer-outline',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Soğukta Isınamıyorum',
+      ozet: 'Isıtma yoksa ya da yetersizse vücut ısısı hızla düşebilir. Tek bir odada toplan, kat kat giyin ve güvenli olmayan ısınma yollarından uzak dur.',
+      yapilacaklar: [
+        { ikon: 'door-closed', baslik: 'Tek bir odada toplan.', aciklama: 'Kullanmadığın odaların kapılarını kapat; kapı ve pencere altlarındaki aralıkları havlu veya bezle kapat.' },
+        { ikon: 'tshirt-crew-outline', baslik: 'Kat kat giyin.', aciklama: 'Birkaç ince kat giysi, tek kalın giysiden daha iyi ısıtır. Battaniye ve montla da örtün.' },
+        { ikon: 'silverware-fork-knife', baslik: 'Yemek ye ve sıvı al.', aciklama: 'Yemek yemek vücudunun ısı üretmesine yardım eder.' },
+        { ikon: 'stove', baslik: 'Evi fırın veya ocakla ısıtma.', aciklama: 'Fırın, ocak, mangal veya jeneratörle ısınmaya çalışma; karbonmonoksit zehirlenmesine ve yangına yol açabilir.' },
+        { ikon: 'radiator', baslik: 'Isıtıcıyı güvenli kullan.', aciklama: 'Isıtıcıyı yanıcı eşyalardan uzak tut; uyurken veya odadan çıkarken kapat.' },
+      ],
+      guvenliIpuclari: ['Titreme ve yorgunluğu ciddiye al.', 'Yaşlıları ve çocukları sık kontrol et.', 'Başını ve ellerini örtülü tut.'],
+      kacinilmasiGerekenler: ['Isıtıcıyı yatağa yakın bırakma.', 'Sobalı odayı havasız bırakma.', 'Uykulu ve şaşkın kişiyi yalnız bırakma.'],
+      ozelDurum: {
+        ikon: 'heart-pulse',
+        baslik: 'Bebek Varsa',
+        aciklama: 'Bebekte parlak kırmızı ve soğuk cilt ya da çok düşük enerji soğuktan etkilendiğini gösterebilir. Bu belirtileri görürsen hemen sağlık yardımı iste.',
+      },
+      kaynak: 'CDC • FEMA • Red Cross',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Soğukta Barındıktan Sonra',
       ozet: 'Üşümenin azalması tehlikenin bittiğini göstermez. Barınmanı sürdür ve belirtilerini takip et.',
@@ -38,7 +60,27 @@ const barinmaSenaryolari = [
     kategori: 'barinma',
     ad: 'Kesintide Gıda Güvenliği',
     ikon: 'basket-outline',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Kesinti Sırasında Gıdalar',
+      ozet: 'Elektrik kesildiğinde buzdolabı ve dondurucudaki gıdalar ısınmaya başlar. Kapakları kapalı tut ve gıdaları soğuk tutmanın güvenli yollarını kullan.',
+      yapilacaklar: [
+        { ikon: 'fridge-outline', baslik: 'Kapakları kapalı tut.', aciklama: 'Buzdolabını ve dondurucuyu gerekmedikçe açma; her açışta içerisi ısınır.' },
+        { ikon: 'cube-outline', baslik: 'Buz veya soğutucu kalıp kullan.', aciklama: 'Kesinti uzayacaksa gıdaları buz veya donmuş soğutucu kalıplarla doldurulmuş bir soğutma kabına koy.' },
+        { ikon: 'food-variant', baslik: 'Önce bozulabilecek gıdaları tüket.', aciklama: 'Önce buzdolabındaki, sonra dondurucudaki gıdaları; en son konserve ve kuru gıdaları kullan.' },
+        { ikon: 'grill-outline', baslik: 'Yemeği güvenli yerde pişir.', aciklama: 'Kapalı alanda mangal, kamp ocağı veya jeneratör kullanma; karbonmonoksit zehirlenmesine yol açabilir.' },
+        { ikon: 'water-outline', baslik: 'İçme suyunu ayır.', aciklama: 'Kesinti suyu da etkileyebilir; ambalajlı veya güvenli suyu içme ve yemek için ayır.' },
+      ],
+      guvenliIpuclari: ['Konserve ve kuru gıdaları elde tut.', 'Ellerini yemekten önce yıka.', 'Soğutma kabını gölgede tut.'],
+      kacinilmasiGerekenler: ['Kuru buzu gıdaya doğrudan değdirme.', 'Dondurucudaki gıdaları gereksiz yere çıkarma.', 'Çözülen gıdayı oda sıcaklığında bırakma.'],
+      ozelDurum: {
+        ikon: 'medical-bag',
+        baslik: 'Buzdolabında İlaç Varsa',
+        aciklama: 'Soğukta saklanması gereken ilacın ne kadar süre ısındığını not et ve kullanmadan önce eczacına danış.',
+      },
+      kaynak: 'CDC • FEMA',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Gıda Güvenliği — Kesinti Sonrası',
       ozet: 'Elektriğin gelmesi ısınmış gıdayı güvenli yapmaz. Kesinti süresini, kapakları ve gıda sıcaklığını değerlendir.',
@@ -67,7 +109,27 @@ const barinmaSenaryolari = [
     kategori: 'barinma',
     ad: 'Temiz Su İhtiyacı',
     ikon: 'water-outline',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Temiz Su Bulamıyorum',
+      ozet: 'Şebeke suyu kesildiğinde veya kirlendiğinde önce ambalajlı su kullan. Ambalajlı su yoksa suyu güvenli hale getirmeden içme.',
+      yapilacaklar: [
+        { ikon: 'bottle-soda-outline', baslik: 'Önce ambalajlı su kullan.', aciklama: 'İçmek, yemek yapmak ve diş fırçalamak için mümkünse ambalajlı su kullan.' },
+        { ikon: 'kettle-steam-outline', baslik: 'Ambalajlı su yoksa suyu kaynat.', aciklama: 'Suyu fokur fokur kaynayana kadar ısıt ve en az bir dakika kaynamaya bırak. Kullanmadan önce soğut.' },
+        { ikon: 'water-outline', baslik: 'Bulanık suyu önce durult.', aciklama: 'Su bulanıksa temiz bir bezden süz veya çökelmesini bekle, sonra kaynat.' },
+        { ikon: 'water-alert-outline', baslik: 'Suyu idareli kullan.', aciklama: 'Güvenli suyu önce içme ve yemek için ayır; temizlik için daha az kullan.' },
+        { ikon: 'map-marker-outline', baslik: 'Su dağıtım noktalarını öğren.', aciklama: 'Belediye, AFAD veya Kızılay’ın duyurduğu su dağıtım yerlerini takip et.' },
+      ],
+      guvenliIpuclari: ['Bebekler için güvenli su ayır.', 'Çocukları kaynar sudan uzak tut.', 'Kaynattığın suyu kapalı kapta beklet.'],
+      kacinilmasiGerekenler: ['Dere veya kaynak suyunu kaynatmadan içme.', 'Taşınabilir filtrenin her mikrobu temizlediğini düşünme.', 'Kapalı alanda kamp ocağıyla su kaynatma.'],
+      ozelDurum: {
+        ikon: 'alert',
+        baslik: 'Kaynatamıyorsan',
+        aciklama: 'Ambalajlı su için yetkililerden veya su dağıtım noktalarından yardım iste. Su arıtma tableti kullanacaksan yalnızca ürünün talimatına göre kullan.',
+      },
+      kaynak: 'CDC • Kızılay',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Temiz Suya Ulaştıktan Sonra',
       ozet: 'Suyun yeniden akması içilebilir olduğunu göstermez. Güvenli suyu kirletmeden sakla; resmî uyarıları izlemeyi sürdür.',
@@ -116,7 +178,27 @@ const barinmaSenaryolari = [
       kaynak: 'AFAD • Red Cross • CDC',
       kontrolEdilecek: false,
     },
-    sonrasi: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    sonrasi: {
+      baslik: 'Barınma Alanına Yerleştikten Sonra',
+      ozet: 'Kalabalık barınma alanlarında hastalıklar ve kazalar kolay yayılabilir. Temizliğe dikkat et, sağlık durumunu görevlilere bildir ve alan kurallarına uy.',
+      yapilacaklar: [
+        { ikon: 'hand-wash-outline', baslik: 'Ellerini sık yıka.', aciklama: 'Yemekten önce ve tuvaletten sonra ellerini sabunla yıka; su yoksa el antiseptiği kullan.' },
+        { ikon: 'water-outline', baslik: 'Sadece güvenli suyu iç.', aciklama: 'Barınma alanının verdiği veya güvenli olarak işaretlenen suyu kullan.' },
+        { ikon: 'account-multiple-outline', baslik: 'Kişisel eşyalarını paylaşma.', aciklama: 'Yiyecek, içecek, yatak ve kişisel eşyalarını başkalarıyla paylaşmamaya çalış.' },
+        { ikon: 'card-account-details-outline', baslik: 'Acil iletişim bilgisi bırak.', aciklama: 'Görevlilere ve güvendiğin kişilere sana ulaşabilecekleri bir yakınının bilgilerini ver.' },
+        { ikon: 'emoticon-sad-outline', baslik: 'Zorlanırsan destek iste.', aciklama: 'Korku, uykusuzluk veya üzüntü yaşamak normaldir. Zorlanırsan görevlilerden destek iste.' },
+      ],
+      guvenliIpuclari: ['Öksürürken ağzını kapat.', 'Çocukları göz önünde tut.', 'Alan kurallarına uy.'],
+      kacinilmasiGerekenler: ['Çadırda sigara içme.', 'Çöpü yaşadığın yerin yanında biriktirme.', 'Hastalığını görevlilerden saklama.'],
+      ozelDurum: {
+        ikon: 'thermometer',
+        baslik: 'Ateş, İshal veya Kusma Olursa',
+        aciklama: 'Kendinde veya çevrendekilerde bu belirtileri fark edersen hemen barınma alanındaki sağlık görevlisine bildir.',
+      },
+      kaynak: 'CDC • Hacettepe Ü. Halk Sağlığı',
+      kontrolEdilecek: true,
+    },
   },
 ];
 
