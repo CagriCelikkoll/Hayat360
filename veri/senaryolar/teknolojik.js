@@ -89,6 +89,35 @@ const teknolojikSenaryolar = [
       kontrolEdilecek: false,
     },
   },
+
+  // ===== referans/27 =====
+  {
+    id: 'sisen-telefon-pili',
+    kategori: 'teknolojik',
+    ad: 'Şişen Telefon Pili',
+    ikon: 'battery-alert',
+    durumAni: {
+      baslik: 'Telefonun Pili Şişti',
+      ozet: 'Şişme, pilin hasarlandığını ve yangın riski taşıdığını gösterebilir. Telefonu kullanmayı bırak; tehlike belirtilerinde cihazı kurtarmaya çalışma.',
+      yapilacaklar: [
+        { ikon: 'cellphone-off', baslik: 'Kullanımı ve şarjı durdur.', aciklama: 'Cihaz normal sıcaklıktaysa ve güvenle yaklaşabiliyorsan şarj bağlantısını kesip telefonu kapat. Duman, hışırtı veya aşırı ısı varsa dokunma.' },
+        { ikon: 'battery-alert-variant-outline', baslik: 'Pili sıkıştırma ve sökme.', aciklama: 'Şişen kapağı yerine bastırma; kasayı açma, pili delme veya bükme. Hasar, kısa devreye ve hızla gelişen yangına yol açabilir.' },
+        { ikon: 'exit-run', baslik: 'Tehlike belirtisinde uzaklaş.', aciklama: 'Duman, hışırtı, aşırı ısı veya alev görürsen cihazı bırak, çevrendekileri uyar ve dışarı çık. Güvenli yerden 112’yi ara.' },
+        { ikon: 'headset', baslik: 'Yetkili servisten yönlendirme al.', aciklama: 'Acil tehlike yoksa üretici veya yetkili servisle başka cihazdan iletişime geç. Pilin şiştiğini belirt; taşıma önerisini öğren.' },
+        { ikon: 'recycle', baslik: 'Evsel çöpe atma.', aciklama: 'Telefonu veya pilini çöp ya da genel geri dönüşüm kutusuna bırakma. Hasarlı pil için servisin veya belediyenin yönlendirdiği teslim yöntemini kullan.' },
+      ],
+      guvenliIpuclari: ['Çocukları ve hayvanları uzak tut.', 'Çıkış yolunu açık bırak.', 'Şişmeyi servise bildir.'],
+      kacinilmasiGerekenler: ['Şarj ederek deneme.', 'Pili delme veya ezme.', 'Dumanlı cihazı taşıma.'],
+      ozelDurum: {
+        ikon: 'fire-alert',
+        baslik: 'Duman veya yangın varsa',
+        aciklama: 'Söndürmeye çalışırken çıkışı geciktirme. İçeri yeniden girme; 112’ye lityum pilli bir cihazın duman çıkardığını söyle. Dumanı soluduysan bunu da bildir.',
+      },
+      kaynak: 'London Fire Brigade • EPA',
+      kontrolEdilecek: false,
+    },
+    sonrasi: null, // Fotoğrafı yok
+  },
 ];
 
 export default teknolojikSenaryolar;

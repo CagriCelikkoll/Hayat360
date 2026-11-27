@@ -60,6 +60,35 @@ const dogaSartlariSenaryolari = [
       kontrolEdilecek: false,
     },
   },
+
+  // ===== referans/23 =====
+  {
+    id: 'kene-tutunmasi',
+    kategori: 'doga-sartlari',
+    ad: 'Kene Tutunması',
+    ikon: 'bug-outline',
+    durumAni: {
+      baslik: 'Doğada Kene Tutundu',
+      ozet: 'Kene tutunduysa çıkarmayı geciktirme. Türkiye’de KKKA riski nedeniyle doğru çıkarma ve sonraki belirtileri izlemek önemlidir.',
+      yapilacaklar: [
+        { ikon: 'medical-bag', baslik: 'İnce uçlu cımbız kullan.', aciklama: 'Temiz cımbızla keneyi deriye tutunduğu en yakın noktadan kavra. Çıplak elle dokunma; şişkin gövdesini sıkma.' },
+        { ikon: 'arrow-up', baslik: 'Sabitçe, düz çek.', aciklama: 'Keneyi yavaş ve kesintisiz bir kuvvetle deriden uzaklaştır. Döndürme, ani çekiştirme veya ezme.' },
+        { ikon: 'hospital-building', baslik: 'Çıkaramıyorsan yardım al.', aciklama: 'Vakit kaybetmeden en yakın sağlık kuruluşuna başvur. Keneyi çıkarmak için günlerce bekleme; cildi kesme veya kazıma.' },
+        { ikon: 'hand-wash-outline', baslik: 'Bölgeyi ve ellerini temizle.', aciklama: 'Çıkardıktan sonra tutunma yerini ve ellerini sabunlu suyla yıka. Keneyi parmaklarınla ezmeden kapalı bir kaba koy.' },
+        { ikon: 'account-search-outline', baslik: 'Başka kene var mı kontrol et.', aciklama: 'Kulak arkası, koltuk altı, kasık ve diz arkası dahil tüm vücudunu kontrol et. Tutunma tarihini ve yerini not al.' },
+      ],
+      guvenliIpuclari: ['Çıkarmayı geciktirme.', 'Çocukları da kontrol et.', 'Başvuruda kene temasını söyle.'],
+      kacinilmasiGerekenler: ['Sigara ile yakma.', 'Yağ, kolonya veya oje sürme.', 'Keneyi sıkma veya döndürme.'],
+      ozelDurum: {
+        ikon: 'calendar-alert',
+        baslik: 'Sonraki Günlerde Belirti Varsa',
+        aciklama: '10 gün boyunca ateş, halsizlik, kas veya baş ağrısı, kusma ve ishali izle; olursa hemen sağlık kuruluşuna başvur. Sonraki haftalarda döküntü veya ateş gelişirse de sağlık kuruluşuna başvur.',
+      },
+      kaynak: 'Sağlık Bakanlığı · CDC',
+      kontrolEdilecek: false,
+    },
+    sonrasi: null, // Fotoğrafı yok
+  },
 ];
 
 export default dogaSartlariSenaryolari;

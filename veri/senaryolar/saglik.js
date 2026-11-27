@@ -60,6 +60,35 @@ const saglikSenaryolari = [
       kontrolEdilecek: false,
     },
   },
+
+  // ===== referans/28 =====
+  {
+    id: 'burun-kanamasi',
+    kategori: 'saglik',
+    ad: 'Burun Kanaması',
+    ikon: 'water',
+    durumAni: {
+      baslik: 'Burun Kanaması',
+      ozet: 'Otur ve öne eğil. Doğru yere kesintisiz baskı uygulamak çoğu burun kanamasını durdurabilir; yoğun kanamada yardım istemeyi geciktirme.',
+      yapilacaklar: [
+        { ikon: 'seat-recline-normal', baslik: 'Otur, başını öne eğ.', aciklama: 'Başını hafifçe öne tut ve ağzından nefes al. Ağzına gelen kanı yutmak yerine tükür; geriye yaslanma.' },
+        { ikon: 'gesture-pinch', baslik: 'Burnunun yumuşak kısmını sık.', aciklama: 'Başparmağın ve işaret parmağınla burun deliklerinin hemen üzerindeki yumuşak kısmı iki taraftan sıkıştır. Kemikli burun köprüsüne basmakla yetinme.' },
+        { ikon: 'timer-outline', baslik: '10–15 dakika bırakma.', aciklama: 'Saate bakarak basıyı kesintisiz sürdür. Kanama durmuş mu diye parmaklarını aralıklarla gevşetme; bu, oluşan pıhtıyı bozabilir.' },
+        { ikon: 'hospital-building', baslik: 'Durmuyorsa acile başvur.', aciklama: '10–15 dakikalık doğru basıya rağmen kanama sürüyorsa acil değerlendirme al. Başına darbe aldıysan veya çok kan yutuyorsan bekleme.' },
+        { ikon: 'phone-in-talk', baslik: 'Ağır belirtilerde 112’yi ara.', aciklama: 'Kanama çok fazlaysa, güçsüzlük, baş dönmesi veya nefes alma güçlüğün varsa 112’yi ara. Kendin araç kullanma.' },
+      ],
+      guvenliIpuclari: ['Süreyi saatle takip et.', 'Ağzından sakin nefes al.', 'Kan sulandırıcı kullanıyorsan bildir.'],
+      kacinilmasiGerekenler: ['Başını geriye atma.', 'Sırtüstü uzanma.', 'Kontrol için basıyı bırakma.'],
+      ozelDurum: {
+        ikon: 'bandage',
+        baslik: 'Kanama durduktan sonra',
+        aciklama: 'İlk 24 saat burnunu sümkürme veya karıştırma. Sıcak içecek, alkol ve ağır egzersizden kaçın. Tekrarlayan kanamaları bir sağlık uzmanına danış.',
+      },
+      kaynak: 'NHS • Leeds Teaching Hospitals',
+      kontrolEdilecek: false,
+    },
+    sonrasi: null, // Fotoğrafı yok
+  },
 ];
 
 export default saglikSenaryolari;

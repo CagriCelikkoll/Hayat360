@@ -90,6 +90,35 @@ const insanKaynakliSenaryolar = [
       kontrolEdilecek: false,
     },
   },
+
+  // ===== referans/26 =====
+  {
+    id: 'trafik-kazasi',
+    kategori: 'insan-kaynakli',
+    ad: 'Trafik Kazası',
+    ikon: 'car-emergency',
+    durumAni: {
+      baslik: 'Trafik Kazası Oldu',
+      ozet: 'Kazadan sonra ikinci bir çarpışma riski vardır. Önce kendini koru; yaralı veya acil tehlike varsa 112’yi ara.',
+      yapilacaklar: [
+        { ikon: 'road-variant', baslik: 'Trafikten uzaklaş.', aciklama: 'Güvenliyse dörtlüleri yak. Yaralanmadıysan trafikten uzak taraftan çık; araçlardan ve akan trafikten uzakta güvenli bir yere geç.' },
+        { ikon: 'phone-in-talk', baslik: '112’ye açık bilgi ver.', aciklama: 'Yol adını, gidiş yönünü ve konumunu bildir. Yaralı sayısını, sıkışanları, yangın veya yakıt sızıntısını söyle.' },
+        { ikon: 'account-injury-outline', baslik: 'Yaralıyı gereksiz yere oynatma.', aciklama: 'Yangın gibi doğrudan tehlike yoksa yaralıyı çekerek araçtan çıkarma. Başını veya boynunu zorlayarak hareket ettirme.' },
+        { ikon: 'lungs', baslik: 'Solunumu kontrol et.', aciklama: 'Yanıt vermiyor ve normal nefes almıyorsa 112’ye hemen bildir. Telefonu hoparlöre al; görevlinin yönlendirdiği canlandırma adımlarını uygula.' },
+        { ikon: 'bandage', baslik: 'Kanamayı ve üşümeyi azalt.', aciklama: 'Şiddetli dış kanamada temiz bezle sıkıca bası uygula; batmış cismin üzerine bastırma. Yaralıyı sıcak tut; yiyecek, içecek verme.' },
+      ],
+      guvenliIpuclari: ['Varsa eldiven kullan.', '112’nin sorularını yanıtla.', 'Ekiplerin erişimini açık tut.'],
+      kacinilmasiGerekenler: ['Sigara veya ateş yakma.', 'Trafiğin içine girme.', 'Yaralıyı yürütmeye çalışma.'],
+      ozelDurum: {
+        ikon: 'car-outline',
+        baslik: 'Araçtan Güvenle Çıkamıyorsan',
+        aciklama: 'Trafiğe adım atma. Yangın gibi doğrudan tehlike yoksa kemerin bağlı kalsın; dörtlüleri yak. 112’ye araçtan çıkamadığını bildir ve verilen talimatları izle.',
+      },
+      kaynak: 'Sağlık Bakanlığı · GOV.UK Highway Code',
+      kontrolEdilecek: false,
+    },
+    sonrasi: null, // Fotoğrafı yok
+  },
 ];
 
 export default insanKaynakliSenaryolar;

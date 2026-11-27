@@ -89,6 +89,35 @@ const kurtarmaSenaryolari = [
       kontrolEdilecek: false,
     },
   },
+
+  // ===== referans/24 =====
+  {
+    id: 'rip-akintisi',
+    kategori: 'kurtarma',
+    ad: 'Rip Akıntısı',
+    ikon: 'swim',
+    durumAni: {
+      baslik: 'Rip Akıntısına Kapıldım',
+      ozet: 'Çeken akıntı seni kıyıdan açığa sürükleyebilir. Gücünü koru; doğrudan kıyıya yüzerek akıntıyla savaşma.',
+      yapilacaklar: [
+        { ikon: 'swim', baslik: 'Akıntıya karşı yüzmeyi bırak.', aciklama: 'Aynı yerde kalıyor veya açığa sürükleniyorsan kıyıya doğru zorlanma. Güçlü akıntıya karşı yüzmek seni hızla yorabilir.' },
+        { ikon: 'waves', baslik: 'Yüzeyde kal ve nefesini düzenle.', aciklama: 'Varsa tahta veya can simidine tutun. Sırtüstü yüzebiliyorsan başını geriye bırak, kollarını aç ve nefesine odaklan.' },
+        { ikon: 'bullhorn-outline', baslik: 'Yardım için seslen.', aciklama: 'Cankurtarana veya kıyıdakilere seslen. Yüzeyde kalabiliyorsan bir elini kaldırarak yerini göster; yardım çağırırken gücünü tüketme.' },
+        { ikon: 'arrow-right-bold-outline', baslik: 'Yüzebiliyorsan akıntıdan yana çık.', aciklama: 'Gücün yeterliyse akıntının yönüne dik, kıyı çizgisine paralel yüzerek çekişten çıkmayı dene. Başaramıyorsan zorlamayı bırak.' },
+        { ikon: 'flag-outline', baslik: 'Çekişten çıkınca kıyıya yönel.', aciklama: 'Akıntıdan uzaklaşacak şekilde kıyıya çapraz yüz. Kıyıya ulaşamıyorsan yüzeyde kalıp yardım iste; yeniden akıntıya girme.' },
+      ],
+      guvenliIpuclari: ['Yüzen desteğe tutun.', 'Nefesini düzenle.', 'Cankurtaranı dinle.'],
+      kacinilmasiGerekenler: ['Akıntıyla yarışma.', 'Tahtanı veya simidini bırakma.', 'Gücün tükenene kadar yüzme.'],
+      ozelDurum: {
+        ikon: 'lifebuoy',
+        baslik: 'Yüzemiyorsan veya Çok Yorulduysan',
+        aciklama: 'Paralel yüzmeye kendini zorlama. Yüzeyde kalmaya odaklan; başını geriye al, kollarını aç ve küçük el hareketleriyle destek al. Yakındaki yüzdürücüye tutun; kıyıdakilerden 112’yi aramalarını iste.',
+      },
+      kaynak: 'RNLI • NOAA / NWS',
+      kontrolEdilecek: false,
+    },
+    sonrasi: null, // Fotoğrafı yok
+  },
 ];
 
 export default kurtarmaSenaryolari;

@@ -147,6 +147,35 @@ const dogalAfetSenaryolari = [
       kontrolEdilecek: false,
     },
   },
+
+  // ===== referans/25 =====
+  {
+    id: 'hortum',
+    kategori: 'dogal-afetler',
+    ad: 'Hortum',
+    ikon: 'weather-tornado',
+    durumAni: {
+      baslik: 'Hortum Tehlikesi',
+      ozet: 'Yakınında hortum varsa veya resmî uyarı geldiyse hemen sığın. Uçan parçalar, camlar ve çöken yapılar ağır yaralanmalara yol açabilir.',
+      yapilacaklar: [
+        { ikon: 'home-outline', baslik: 'Sağlam bir binaya gir.', aciklama: 'Güvenli ulaşabiliyorsan en yakın sağlam yapıya geç. Çadır, baraka ve karavan hortuma karşı güvenli sığınak değildir.' },
+        { ikon: 'stairs-down', baslik: 'En alt kattaki iç odaya geç.', aciklama: 'Varsa bodrumu veya penceresiz, küçük bir iç odayı seç. Dış duvarlarla arana mümkün olduğunca çok duvar koy.' },
+        { ikon: 'table-furniture', baslik: 'Başını ve boynunu koru.', aciklama: 'Yere yakın dur; kollarınla başını kapat. Yakınındaki sağlam masa, yastık veya battaniyeyle uçan parçalardan korun.' },
+        { ikon: 'window-closed-variant', baslik: 'Camlardan ve geniş salonlardan uzaklaş.', aciklama: 'Pencereye yaklaşma. Spor salonu ve büyük çatılı alanlardan çıkıp binanın belirlenmiş sığınağına veya alt kattaki iç bölümüne geç.' },
+        { ikon: 'radio', baslik: 'Resmî uyarıları takip et.', aciklama: 'Güvenli yerde kal; tehlike sürerken dışarı çıkma. Yakınındakileri uyar ve çocukları yanında tut.' },
+      ],
+      guvenliIpuclari: ['Hemen sığın.', 'Başını koru.', 'Telefonunu yanında tut.'],
+      kacinilmasiGerekenler: ['Hortumu izlemek için çıkma.', 'Pencereleri açma.', 'Köprü altına sığınma.'],
+      ozelDurum: {
+        ikon: 'car',
+        baslik: 'Araçtaysan',
+        aciklama: 'Ulaşılabilir sağlam sığınağa geç. Uçan parçalar araca çarpıyorsa güvenle dur, kemerini takılı tut, başını cam hizasının altına indirip kollarınla koru. Trafikte hortumla yarışmaya çalışma.',
+      },
+      kaynak: 'NOAA / NWS',
+      kontrolEdilecek: false,
+    },
+    sonrasi: null, // Fotoğrafı yok
+  },
 ];
 
 export default dogalAfetSenaryolari;

@@ -89,6 +89,35 @@ const barinmaSenaryolari = [
       kontrolEdilecek: false,
     },
   },
+
+  // ===== referans/22 =====
+  {
+    id: 'guvenli-barinak-arama',
+    kategori: 'barinma',
+    ad: 'Güvenli Barınak Arama',
+    ikon: 'home-variant-outline',
+    durumAni: {
+      baslik: 'Güvenli Barınak Arıyorum',
+      ozet: 'Evin güvenli değilse önce tehlikeden uzaklaş. Kalacak yer için resmî yönlendirmeyi izle; hasarlı binada bekleme.',
+      yapilacaklar: [
+        { ikon: 'map-marker-radius-outline', baslik: 'Önce güvenli bölgeye geç.', aciklama: 'Bulunduğun afete uygun güvenli yere ulaş. Toplanma alanı geçici buluşma noktasıdır; konaklama merkeziyle aynı şey değildir.' },
+        { ikon: 'tent', baslik: 'Açık barınma noktasını doğrula.', aciklama: 'AFAD, valilik ve belediyenin güncel duyurularını izle. Görevlilerden açık merkezin yerini ve güvenli ulaşım yolunu öğren.' },
+        { ikon: 'boom-gate-outline', baslik: 'Yolda tehlikeli alanlardan uzak dur.', aciklama: 'Hasarlı binalara, kopan kablolara ve sel suyuna yaklaşma. Kapanmış yolu aşma; riskli kestirmeler yerine görevli yönlendirmesine uy.' },
+        { ikon: 'bag-personal-outline', baslik: 'Zaman varsa temel eşyalarını al.', aciklama: 'İlaç, su, giysi ve acil çantanı al. Eşya toplamak tahliyeyi geciktirecekse bırak; can güvenliğini öncele.' },
+        { ikon: 'police-badge-outline', baslik: 'İhtiyaçlarını görevliye bildir.', aciklama: 'Vardığında ilaç, erişilebilirlik, bebek bakımı veya özel beslenme ihtiyacını anlat. Ailendekilerin nerede olduğunu ve eksik kişileri bildir.' },
+      ],
+      guvenliIpuclari: ['Çocukları yanında tut.', 'Yakınlarına konumunu bildir.', 'Görevlilerin açıklamalarını izle.'],
+      kacinilmasiGerekenler: ['Hasarlı binada kalma.', 'Resmî olmayan adreslere güvenme.', 'Eşya için tehlikeye dönme.'],
+      ozelDurum: {
+        ikon: 'grill-outline',
+        baslik: 'Beklerken Isınman Gerekiyorsa',
+        aciklama: 'Kapalı yerde, çadırda veya araç içinde mangal ve yakıtlı kamp ocağı çalıştırma. Karbonmonoksit kokusuzdur ve öldürebilir. Baş dönmesi veya bulantıda açık havaya çıkıp 112’yi ara.',
+      },
+      kaynak: 'AFAD • Red Cross • CDC',
+      kontrolEdilecek: false,
+    },
+    sonrasi: null, // Fotoğrafı yok
+  },
 ];
 
 export default barinmaSenaryolari;
