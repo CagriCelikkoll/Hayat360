@@ -89,6 +89,36 @@ const saglikSenaryolari = [
     },
     sonrasi: null, // Fotoğrafı yok
   },
+
+  // ===== referans/32 =====
+  {
+    id: 'nobet',
+    kategori: 'saglik',
+    ad: 'Nöbet',
+    ikon: 'head-flash-outline',
+    durumAni: null, // Fotoğrafı yok
+    sonrasi: {
+      baslik: 'Nöbet Sonrası',
+      ozet: 'Kasılmaların bitmesi, kişinin tamamen toparlandığı anlamına gelmez. Yanında kal, solunumunu izle ve yardım gerektiren belirtileri kontrol et.',
+      yapilacaklar: [
+        { ikon: 'lungs', baslik: 'Solunumunu kontrol et.', aciklama: 'Normal nefes alıyorsa, bilinci kapalı kişiyi yan çevir. Tepkisiz ve normal nefes almıyorsa 112’yi ara; yönlendirmeyle kalp masajına başla.' },
+        // Fotoğrafta "toparlaıncaya" yazım hatası vardı; "toparlanıncaya" olarak düzeltildi
+        { ikon: 'account-heart-outline', baslik: 'Toparlanana kadar yanında kal.', aciklama: 'Nerede olduğunu ve nöbet geçirdiğini sakin bir sesle açıkla. Tam toparlanıncaya kadar yalnız bırakma; aceleyle ayağa kaldırma.' },
+        { ikon: 'phone-in-talk', baslik: 'Acil belirtilerde 112’yi ara.', aciklama: 'İlk nöbette, beş dakikayı aşan veya aralıksız tekrarlayan nöbette 112’yi ara. Bilinci açılmıyorsa, ciddi yaralanma veya solunum güçlüğü varsa bekleme.' },
+        { ikon: 'clipboard-edit-outline', baslik: 'Gördüklerini ekibe anlat.', aciklama: 'Başlama ve bitiş saatlerini, hareketleri, düşme veya yaralanmaları not et. Bu bilgileri sağlık ekibiyle paylaş.' },
+        { ikon: 'cup-off-outline', baslik: 'Yemek ve içecek için bekle.', aciklama: 'Tamamen uyanıp toparlanmadan yiyecek, içecek veya ağızdan ilaç verme. Yutma güvenliğinden emin olmadan acele etme.' },
+      ],
+      guvenliIpuclari: ['Sakin ve kısa konuş.', 'Mahremiyetini koru.', 'Solunumunu izlemeyi sürdür.'],
+      kacinilmasiGerekenler: ['Ağzına bir şey koyma.', 'Zorla ayağa kaldırma.', 'Toparlanmadan yalnız bırakma.'],
+      ozelDurum: {
+        ikon: 'clipboard-list-outline',
+        baslik: 'Kişisel nöbet planı varsa',
+        aciklama: 'Doktorun hazırladığı planı yalnızca uygulamayı biliyor ve bunun için eğitim aldıysan izle. Plan dışı ilaç verme; acil belirtilerde 112’ye başvur.',
+      },
+      kaynak: 'NHS • CDC • St John Ambulance',
+      kontrolEdilecek: false,
+    },
+  },
 ];
 
 export default saglikSenaryolari;

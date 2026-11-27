@@ -118,6 +118,35 @@ const kurtarmaSenaryolari = [
     },
     sonrasi: null, // Fotoğrafı yok
   },
+
+  // ===== referans/31 =====
+  {
+    id: 'suda-bogulma',
+    kategori: 'kurtarma',
+    ad: 'Suda Boğulma',
+    ikon: 'lifebuoy',
+    durumAni: null, // Fotoğrafı yok
+    sonrasi: {
+      baslik: 'Sudan Kurtarıldıktan Sonra',
+      ozet: 'Sudan çıkarılan kişinin solunumu ve bilinci değişebilir. Yanında kal; nefes almasını düzenli kontrol et.',
+      yapilacaklar: [
+        { ikon: 'heart-pulse', baslik: 'Normal solumuyorsa hemen müdahale et.', aciklama: 'Tepkisizse ve normal solumuyorsa 112’yi hoparlöre al. Kalp masajına başla; eğitimliysen kurtarıcı soluk ekle.' },
+        { ikon: 'clipboard-plus-outline', baslik: 'Tıbbi değerlendirme iste.', aciklama: 'Suda solunum güçlüğü yaşadıysa iyi görünse bile sağlık desteği al. Canlandırma uygulandıysa mutlaka acil değerlendirme gerekir.' },
+        { ikon: 'stethoscope', baslik: 'Belirtileri izle.', aciklama: 'Süren öksürük, zor veya hızlı solunum, dalgınlık ya da bilinç değişikliğinde 112’yi ara; yalnız bırakma.' },
+        { ikon: 'bed-outline', baslik: 'Üşümesini önle.', aciklama: 'Güvenli yerde ıslak giysilerini çıkarabiliyorsan kuru giysiyle değiştir. Battaniyeyle ört; solunumunu görmeni engelleme.' },
+        { ikon: 'account-injury-outline', baslik: 'Yan pozisyonu koşuluna göre uygula.', aciklama: 'Tepkisiz ama normal soluyorsa ve yaralanma şüphesi yoksa yan yatır. Solunumu sürekli kontrol et.' },
+      ],
+      guvenliIpuclari: ['Yanında kal.', 'Ekipleri yönlendir.', 'Durum değişikliğini bildir.'],
+      kacinilmasiGerekenler: ['Yeniden suya sokma.', 'Su çıkarmak için karnına basma.', 'Bilinci kapalıysa içecek verme.'],
+      ozelDurum: {
+        ikon: 'lifebuoy',
+        baslik: 'Kusma veya Boyun Yaralanması Varsa',
+        aciklama: 'Kusmuk hava yolunu kapatıyorsa kişiyi yan çevir. Boyun yaralanmasından şüpheleniyorsan baş ve boynu mümkün olduğunca aynı hizada tut; 112’nin yönlendirmesini izle. Hava yolunun açık kalması önceliklidir.',
+      },
+      kaynak: 'St John Ambulance • Red Cross • AHA',
+      kontrolEdilecek: false,
+    },
+  },
 ];
 
 export default kurtarmaSenaryolari;

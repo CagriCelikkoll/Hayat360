@@ -176,6 +176,35 @@ const dogalAfetSenaryolari = [
     },
     sonrasi: null, // Fotoğrafı yok
   },
+
+  // ===== referans/30 =====
+  {
+    id: 'heyelan',
+    kategori: 'dogal-afetler',
+    ad: 'Heyelan',
+    ikon: 'landslide',
+    durumAni: null, // Fotoğrafı yok
+    sonrasi: {
+      baslik: 'Heyelan Sonrası',
+      ozet: 'Toprak hareketi durmuş görünse bile yeni kaymalar ve su baskınları gelişebilir. Güvenli bölgede kal; dönüş için acele etme.',
+      yapilacaklar: [
+        { ikon: 'image-filter-hdr', baslik: 'Heyelan alanından uzak dur.', aciklama: 'Toprağın durması tehlikenin bittiğini göstermez. Kayma yoluna, yamacın altına ve birikmiş çamura yaklaşma; başkalarını da güvenli mesafeden uyar.' },
+        { ikon: 'ambulance', baslik: 'Yaralıları güvenli yerden kontrol et.', aciklama: 'Kayma alanına girmeden görebildiğin yaralı veya mahsur kalanları 112’ye bildir. Konumu ve gördüğün tehlikeleri açıkça anlat.' },
+        { ikon: 'power-plug-off-outline', baslik: 'Kopan altyapı hatlarını bildir.', aciklama: 'Elektrik kablolarından ve hasarlı borulardan uzaklaş. Gaz kokusu veya sızıntıyı güvenli yerden bildir; arızayı kendin onarmaya çalışma.' },
+        { ikon: 'home-alert-outline', baslik: 'Eve dönmek için onay bekle.', aciklama: 'Hasarlı binaya eşya almak için girme. Zemin ve yapı güvenliği yetkililerce değerlendirilmeden içeride kalma.' },
+        { ikon: 'bullhorn-outline', baslik: 'Duyuruları ve yol uyarılarını izle.', aciklama: 'Resmî açıklamaları takip et. Yol kapalıysa bariyeri aşma; hasarlı köprülerden ve heyelan kenarından geçmeye çalışma.' },
+      ],
+      guvenliIpuclari: ['Yakınlarına güvenli olduğunu bildir.', 'Acil araçlara yol bırak.', 'Tehlikeleri uzaktan bildir.'],
+      kacinilmasiGerekenler: ['Çamurun içine girme.', 'Yamaçta kazı yapma.', 'Hasarlı yapıya dönme.'],
+      ozelDurum: {
+        ikon: 'landslide',
+        baslik: 'Yeni Kayma Belirtisi Varsa',
+        aciklama: 'Yeni çatlak, ağaç devrilmesi, uğultu veya derede ani seviye değişikliği görürsen çevredekileri uyar. Akış yoluna girmeden güvenli bölgeye uzaklaş ve 112’ye bildir.',
+      },
+      kaynak: 'CDC • USGS',
+      kontrolEdilecek: false,
+    },
+  },
 ];
 
 export default dogalAfetSenaryolari;

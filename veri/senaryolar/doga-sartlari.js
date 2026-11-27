@@ -89,6 +89,35 @@ const dogaSartlariSenaryolari = [
     },
     sonrasi: null, // Fotoğrafı yok
   },
+
+  // ===== referans/29 =====
+  {
+    id: 'orman-yangini',
+    kategori: 'doga-sartlari',
+    ad: 'Orman Yangını',
+    ikon: 'pine-tree-fire',
+    durumAni: null, // Fotoğrafı yok
+    sonrasi: {
+      baslik: 'Orman Yangını Sonrası',
+      ozet: 'Alev görünmese de yanmış orman güvenli olmayabilir. Parka veya kamp alanına dönmeden önce resmî duyuruları kontrol et.',
+      yapilacaklar: [
+        { ikon: 'boom-gate-outline', baslik: 'Dönüş iznini bekle.', aciklama: 'Alan yeniden açılmadan kamp yerine veya patikaya dönme. Barikatları geçme; görevlilerin belirttiği erişim koşullarına uy.' },
+        { ikon: 'shoe-print', baslik: 'Külün üzerine basma.', aciklama: 'Kül, korları ve yanmış kök boşluklarını örtebilir. İzin verilen işaretli yolda kal; zeminin soğuduğunu görünüşünden anlamaya çalışma.' },
+        { ikon: 'tree-outline', baslik: 'Hasarlı ağaçlardan uzak dur.', aciklama: 'Yanmış ağaçlar rüzgâr olmasa da devrilebilir. Altlarında bekleme; sarkan dallara ve hasarlı direklere dikkat et.' },
+        { ikon: 'transmission-tower', baslik: 'Elektrik hatlarına yaklaşma.', aciklama: 'Yere düşmüş kabloyu elektrik taşıyor kabul et. Dokunma, üzerinden geçme ve yerini yetkililere bildir.' },
+        { ikon: 'smoke', baslik: 'Dumanı ve külü soluma.', aciklama: 'Duman sürüyorsa bölgeden uzaklaş. Külü karıştırma; cildine bulaşan külü temiz suyla yıka.' },
+      ],
+      guvenliIpuclari: ['Sağlam, kapalı ayakkabı giy.', 'Güncel resmî duyuruları izle.', 'Çocukları yanmış alandan uzak tut.'],
+      kacinilmasiGerekenler: ['Kapalı kamp alanına girme.', 'Yanmış odunları toplama.', 'Maskeye güvenip dumana girme.'],
+      ozelDurum: {
+        ikon: 'fire',
+        baslik: 'Yeniden Duman veya Alev Görürsen',
+        aciklama: 'Güvenli güzergâhla uzaklaş, 112’ye konumu bildir. Köz aramak veya yangını söndürmek için geri dönme. Nefes almakta zorlanıyorsan acil yardım iste; görevlinin talimatını izle.',
+      },
+      kaynak: 'NPS · CDC/NIOSH · Türkiye 112',
+      kontrolEdilecek: false,
+    },
+  },
 ];
 
 export default dogaSartlariSenaryolari;

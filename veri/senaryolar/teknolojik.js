@@ -118,6 +118,35 @@ const teknolojikSenaryolar = [
     },
     sonrasi: null, // Fotoğrafı yok
   },
+
+  // ===== referans/33 =====
+  {
+    id: 'karbonmonoksit-suphesi',
+    kategori: 'teknolojik',
+    ad: 'Karbonmonoksit Şüphesi',
+    ikon: 'molecule-co',
+    durumAni: null, // Fotoğrafı yok
+    sonrasi: {
+      baslik: 'Karbonmonoksit Şüphesi Sonrası',
+      ozet: 'Dışarı çıkınca rahatlaman, tehlikenin geçtiğini göstermez. Açık havada kal ve karbonmonoksit şüphesini acil yardım ekibine bildir.',
+      yapilacaklar: [
+        { ikon: 'account-group-outline', baslik: 'Açık havada bekle.', aciklama: 'Herkesin dışarı çıktığını kontrol et. İçeride kalan varsa yerini 112’ye söyle; kurtarmak için tehlikeli ortama geri girme.' },
+        { ikon: 'ambulance', baslik: 'Tıbbi değerlendirmeyi geciktirme.', aciklama: '112’ye maruz kalma şüphesini, belirtilerini ve adresini bildir. Baş ağrısı, bulantı veya baş dönmesi azalsa bile ekibin önerdiği değerlendirmeyi tamamla.' },
+        { ikon: 'clipboard-check-outline', baslik: 'Maruz kalmayı ayrıntılı anlat.', aciklama: 'Ne zaman dışarı çıktığını, olası kaynağı ve başka kimlerin etkilendiğini sağlık ekibine söyle. Gebelik veya önemli hastalık varsa bildir.' },
+        { ikon: 'home-alert-outline', baslik: 'İzin verilmeden eve dönme.', aciklama: 'Alarmın susması veya kokusuz bir ortam güvenli olduğunu kanıtlamaz. Yetkili ekip güvenli olduğunu bildirmeden binaya girme.' },
+        { ikon: 'tools', baslik: 'Cihazları kontrol ettir.', aciklama: 'Yakıtla çalışan cihazı yeniden kullanmadan önce yetkili servise kontrol ettir. Arıza giderilmeden çalıştırma; taburculuk sonrası kontrol randevularını aksatma.' },
+      ],
+      guvenliIpuclari: ['Başlangıç saatini not et.', 'Taburculuk talimatlarını sakla.', 'Etkilenen diğer kişileri bildir.'],
+      kacinilmasiGerekenler: ['İçeriye eşya almaya dönme.', 'Alarmı susturup kalma.', 'Cihazı denemek için çalıştırma.'],
+      ozelDurum: {
+        ikon: 'molecule-co',
+        baslik: 'Sonradan yeni belirti çıkarsa',
+        aciklama: 'Taburculuktan sonra unutkanlık, denge bozukluğu veya davranış değişikliği gelişirse gecikmeden tıbbi yardım al. Bilinç kaybı, göğüs ağrısı ya da solunum güçlüğünde 112’yi ara.',
+      },
+      kaynak: 'CDC • CPSC • UKHSA',
+      kontrolEdilecek: false,
+    },
+  },
 ];
 
 export default teknolojikSenaryolar;
