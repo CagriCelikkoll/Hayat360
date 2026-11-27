@@ -46,7 +46,44 @@ yapılmalı ve satır buradan silinmeli.
 | Rip Akıntısı | Sonrası | NOAA / NWS • Red Cross | [NOAA: Rip Current Survival Guide](https://oceantoday.noaa.gov/ripcurrentfeature/), [NWS: Rip Current Safety Rules](https://www.weather.gov/mlb/ripcurrent_rules), [NWS: Before You Go in the Water](https://www.weather.gov/safety/ripcurrent-surviving), [Red Cross: Beach Safety](https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/water-safety/beach-safety.html) |
 | Suda Boğulma | Durum Anı | Red Cross | [Red Cross: Reach or Throw, Don't Go](https://www.redcross.org/content/dam/redcross/training-services/whale-tales/pdfs/Lesson_8_LessonPlan_Final.pdf), [Red Cross: Would You Know What to Do?](https://www.redcross.org/content/dam/redcross/atg/PDF_s/Preparedness___Disaster_Recovery/Disaster_Preparedness/Water_Safety/WouldYouKnowWhattodo.pdf) |
 
+### Sağlık ve Yaşam Mücadelesi (`veri/senaryolar/saglik.js`)
+
+| Senaryo | Sekme | Kaynak satırı | Dayanılan sayfalar |
+|---|---|---|---|
+| İnme Şüphesi | Durum Anı | MEB İlk Yardım | [MEB: Bilinç Bozuklukları ve Ciddi Hastalık Durumunda İlk Yardım (PDF)](https://ilkyardim.meb.gov.tr/media/h2obhvve/bilin%C3%A7-bozukluklari-ve-ciddi-hastalik-durumunda-ilk-yardim.pdf), [MEB: Bilinç Bozuklukları](https://ilkyardim.meb.gov.tr/ilk-yardim-uygulamalari/bilinc-bozukluklari/), Sağlık Bakanlığı'nın inme uyarısı ([Milliyet haberi](https://www.milliyet.com.tr/gundem/saglik-bakanligi-uyardi-iste-inme-belirtileri-ve-yapilmasi-gerekenler-7473581)) |
+| Şiddetli Kanama | Durum Anı | MEB İlk Yardım • Red Cross • FEMA | [MEB: Yaralanmalarda İlk Yardım (PDF)](https://ilkyardim.meb.gov.tr/media/e4qb2x10/yaralanmalarda-ilk-yardim.pdf), [MEB: Genel İlk Yardım Bilgileri (PDF)](https://ilkyardim.meb.gov.tr/media/w4nb0htr/genel-ilk-yardim-bilgileri.pdf), [Red Cross: Life-Threatening Bleeding](https://www.redcross.org/take-a-class/resources/learn-first-aid/bleeding-life-threatening-external), [Ready.gov (FEMA): Steps to Control Bleeding](https://www.ready.gov/training/steps_to_control_bleeding.pdf) |
+| Burun Kanaması | Sonrası | NHS | [NHS: Nosebleed](https://www.nhs.uk/conditions/nosebleed/), [NHS Tayside: Nosebleed](https://www.nhstaysidecdn.scot.nhs.uk/NHSTaysideWeb/idcplg?IdcService=GET_SECURE_FILE&Rendition=web&RevisionSelectionMethod=LatestReleased&noSaveAs=1&dDocName=prod_350651), [Hull NHS: Nosebleeds](https://www.hey.nhs.uk/patient-leaflet/nosebleeds-epistaxis-adults/) |
+| Nöbet | Durum Anı | MEB İlk Yardım • CDC | [MEB: Bilinç Bozuklukları ve Ciddi Hastalık Durumunda İlk Yardım (PDF)](https://ilkyardim.meb.gov.tr/media/h2obhvve/bilin%C3%A7-bozukluklari-ve-ciddi-hastalik-durumunda-ilk-yardim.pdf), [CDC: First Aid for Seizures](https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html), Türkçe sağlık haberleri ([CNN Türk](https://cnnturk.com/saglik/sara-krizi-geciren-kisiye-bunlari-yapmayin-531447)) |
+
+### Doğa Şartlarında Hayatta Kalma (`veri/senaryolar/doga-sartlari.js`)
+
+| Senaryo | Sekme | Kaynak satırı | Dayanılan sayfalar |
+|---|---|---|---|
+| Doğada Kaybolma | Durum Anı | NPS • US Forest Service | [US Forest Service: If You Get Lost](https://www.fs.usda.gov/visit/know-before-you-go/if-you-get-lost), [NPS: Outdoor Emergency Plan](https://www.nps.gov/articles/gtgemergencyplan.htm), [NPS: Junior Ranger – My Favorite Tree](https://www.nps.gov/articles/000/junior-ranger-my-favorite-tree.htm) |
+| Yılan Isırığı | Durum Anı | MEB İlk Yardım | [MEB: Böcek Sokmaları ve Hayvan Isırıklarında İlk Yardım (PDF)](https://ilkyardim.meb.gov.tr/media/sbtnaxju/13-boecek-sokmalari-ve-hayvan-isriklarinda-ilk-yardim.pdf) |
+| Kene Tutunması | Sonrası | Sağlık Bakanlığı • CDC | [Sağlık Bakanlığı HSGM: KKKA](https://hsgm.saglik.gov.tr/tr/zoonotik-ve-vektorel-hastaliklar/kkka.html), [Sağlık Bakanlığı: KKKA Uyarı ve Önlemler](https://www.saglik.gov.tr/TR-55309/kirim-kongo-kanamali-atesi--uyari-ve-onlemler.html), [Atakum İlçe Sağlık Müdürlüğü](https://atakumsm.saglik.gov.tr/TR-251433/kene-icin-tedbiri-elden-birakmayalim.html), [HSGM: KKKA okul eğitimi (PDF)](https://hsgm.saglik.gov.tr/depo/birimler/zoonotik-ve-vektorel-hastaliklar-db/Dokumanlar/Sunumlar/KKKA_okul_egitim_2023.pdf) |
+| Orman Yangını | Durum Anı | Red Cross • CDC • OGM | [Red Cross: If a Wildfire Threatens](https://www.redcross.org/about-us/news-and-events/news/2019/how-to-stay-safe-if-a-wildfire-threatens.html), [CDC: Wildfires and Wildfire Smoke](https://www.cdc.gov/wildfires/safety/how-to-safely-stay-safe-during-a-wildfire.html), OGM'nin "en küçük dumanı 112'ye bildirin" açıklaması ([BirGün haberi](https://www.birgun.net/haber/orman-genel-mudurlugu-yanginda-onemli-olan-karadan-mudahale-392857)), [TEMA: Yangın Sırasında](https://tema.org.tr/en/our-works/forest/before-forest-fires/during-forest-fires) |
+
 ### Uzmanın özellikle bakması gerekenler
+
+- **Bu turdaki numaralar:** Kaynaklarda yılan ısırığı için Ulusal Zehir Danışma Merkezi'nin, orman yangını için
+  Orman Yangın İhbar Hattı'nın ayrı numaraları geçiyor. Kural gereği (fotoğrafta olmayan numara yazılmaz)
+  bu numaraları yazmadım; uzman eklenmesini isterse eklenebilir.
+- **Süre ve sayı yazılmayanlar:** Burun kanaması sonrası için kaynaklar sümkürmemeyi farklı sürelerle
+  anlatıyor (bir gün ile üç gün arası). Nöbette 112 için süre ölçütü zaten Sonrası sekmesinde (fotoğrafta)
+  olduğu için Durum Anı'nda tekrar yazmadım. Turnike için süre kaynaklarda çelişkiliydi; süre yazmadım.
+- **Türkiye'ye özel kaynak bulunamayanlar (bu tur):** Burun Kanaması (Sonrası) ve Doğada Kaybolma (Durum
+  Anı) için Türk resmi kaynağı bulamadım; içerik NHS, NPS ve US Forest Service'e dayanıyor. Orman Yangını
+  için OGM/İletişim Başkanlığı rehberinin adım adım tahliye talimatlarını okuyamadım; tahliye adımları
+  Red Cross ve CDC'ye dayanıyor.
+- **İnme Şüphesi:** Sağlık Bakanlığı'nın inme uyarısını sadece haberlerden okuyabildim; bu yüzden kaynak
+  satırında yalnızca MEB İlk Yardım var.
+- **Nöbet → "Gözlüğü varsa çıkar", "Soğan veya kolonya koklatma":** Türkçe sağlık haberlerine ve
+  ilk yardım eğitim materyallerine dayanıyor; resmi Bakanlık sayfasında birebir görmedim.
+- **Kene Tutunması (Sonrası):** Fotoğraftaki Durum Anı sekmesi 10 günlük belirti takibini zaten anlattığı
+  için Sonrası sekmesinde bunu tekrar yazmadım; korunma önlemlerine ağırlık verdim.
+
+### İnsan Kaynaklı ve Kurtarma için notlar
 
 - **Türkiye'ye özel kaynak bulunamayanlar:** Bina Yangını, Trafik Kazası, Tipide Mahsur Kalma, Asansörde
   Mahsur Kalma, Rip Akıntısı ve Suda Boğulma sekmeleri için AFAD, Kızılay, 112 veya Sağlık Bakanlığı'nın

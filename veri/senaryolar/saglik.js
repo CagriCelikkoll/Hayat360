@@ -1,5 +1,7 @@
 // Bu dosya "Sağlık ve Yaşam Mücadelesi" kategorisinin senaryolarını tutar.
-// Metinler referans/ fotoğraflarından HARFİ HARFİNE aktarıldı; değiştirmeyin.
+// Fotoğraftan gelen metinler HARFİ HARFİNE aktarıldı; değiştirmeyin.
+// "TASLAK" yorumlu sekmeleri fotoğraf olmadığı için biz yazdık (kontrolEdilecek: true);
+// bunlar uzman kontrolünden geçene kadar ekranda sarı "Taslak" etiketiyle görünür.
 // Alanların ne anlama geldiği veri/senaryolar/index.js dosyasının başında yazıyor.
 
 const saglikSenaryolari = [
@@ -9,7 +11,27 @@ const saglikSenaryolari = [
     kategori: 'saglik',
     ad: 'İnme Şüphesi',
     ikon: 'brain',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'İnme Şüphesi Anında',
+      ozet: 'Yüzde kayma, kolda güçsüzlük veya konuşma bozukluğu aniden başladıysa inme olabilir. Belirtilerin geçmesini bekleme; hemen 112’yi ara.',
+      yapilacaklar: [
+        { ikon: 'emoticon-outline', baslik: 'Gülümsemesini iste.', aciklama: 'Yüzünün bir tarafı düşüyor veya kayıyorsa bu inme belirtisi olabilir.' },
+        { ikon: 'arm-flex-outline', baslik: 'İki kolunu kaldırmasını iste.', aciklama: 'Bir kol aşağı düşüyor veya hiç kalkmıyorsa güçsüzlük vardır.' },
+        { ikon: 'chat-processing-outline', baslik: 'Basit bir cümle söylet.', aciklama: 'Konuşması bozuk, anlaşılmaz veya söyleneni anlamıyorsa durum acildir.' },
+        { ikon: 'phone-in-talk', baslik: 'Belirtilerden biri bile varsa 112’yi ara.', aciklama: 'Belirtilerin geçmesini bekleme. 112 ekibi gelene kadar kişinin yanında kal.' },
+        { ikon: 'seat-recline-normal', baslik: 'Rahat bir pozisyonda beklet.', aciklama: 'Kişiyi güvenli bir yerde oturt veya uzandır ve sıkan giysilerini gevşet. Düşmemesi için yalnız bırakma.' },
+      ],
+      guvenliIpuclari: ['Sakin konuş ve kişiyi rahatlat.', 'Yanındakilerden yardım iste.', 'Kişinin söylediklerini dikkatle dinle.'],
+      kacinilmasiGerekenler: ['Kişiyi uyumaya bırakma.', 'Kendi aracınla hastaneye götürmeye çalışma.', 'Kişiyi yalnız bırakma.'],
+      ozelDurum: {
+        ikon: 'eye-off-outline',
+        baslik: 'Belirtiler Farklıysa',
+        aciklama: 'Ani görme kaybı, çift görme, denge kaybı veya nedeni belli olmayan çok şiddetli baş ağrısı da inme belirtisi olabilir. Bu durumda da hemen 112’yi ara.',
+      },
+      kaynak: 'MEB İlk Yardım',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'İnme Şüphesi Sonrası',
       ozet: 'Yüzde kayma, kol güçsüzlüğü veya konuşma bozukluğu geçse bile acil durum sürer. 112 yardımını ve hastane değerlendirmesini iptal etme.',
@@ -38,7 +60,27 @@ const saglikSenaryolari = [
     kategori: 'saglik',
     ad: 'Şiddetli Kanama',
     ikon: 'water-plus-outline',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Şiddetli Kanama Anında',
+      ozet: 'Fışkıran veya durmadan akan kan hayatı tehdit eder. Hemen 112’yi ara ve kanayan yere güçlü, sürekli bası uygula.',
+      yapilacaklar: [
+        { ikon: 'shield-alert-outline', baslik: 'Önce ortam güvenliğini kontrol et.', aciklama: 'Trafik, yangın veya elektrik gibi bir tehlike varsa önce kendi güvenliğini sağla.' },
+        { ikon: 'phone-in-talk', baslik: 'Hemen 112’yi ara.', aciklama: 'Kanama fışkırıyor veya durmadan akıyorsa vakit kaybetme. Yanında biri varsa aramasını iste, sen kanamaya müdahale et.' },
+        { ikon: 'hand-back-right-outline', baslik: 'Yaraya doğrudan bastır.', aciklama: 'Temiz bir bez, gazlı bez veya giysiyle yaranın tam üzerine güçlü ve sürekli bası uygula.' },
+        { ikon: 'medical-bag', baslik: 'Bası yetmezse turnikeyi düşün.', aciklama: 'Kol veya bacaktaki hayatı tehdit eden kanama bası ile durmuyorsa ve eğitimin varsa turnike uygula. Uygulama saatini not et.' },
+        { ikon: 'bed-outline', baslik: 'Kişiyi yatır ve sakin tut.', aciklama: 'Kişiyi güvenli bir yerde yatır. Bası yaparken onunla konuşarak yanında olduğunu hissettir.' },
+      ],
+      guvenliIpuclari: ['Bastırmayı ekip gelene kadar sürdür.', 'Yardımcı varsa görev paylaş.', 'Temiz bez yoksa giysi kullan.'],
+      kacinilmasiGerekenler: ['Kontrol etmek için bastırmaya ara verme.', 'Yaraya ilaç veya başka madde sürme.', 'Eğitimin yoksa turnike uygulama.'],
+      ozelDurum: {
+        ikon: 'alert',
+        baslik: 'Kanama Durmazsa',
+        aciklama: 'Bası ve turnikeye rağmen kanama sürüyorsa bastırmaya devam et ve durumu 112’ye yeniden bildir. Görevlinin talimatlarını izle.',
+      },
+      kaynak: 'MEB İlk Yardım • Red Cross • FEMA',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Şiddetli Kanama Sonrası',
       ozet: 'Kanamanın azalması, kaybedilen kanın etkilerini ortadan kaldırmaz. Acil yardım çağrısını iptal etme; kişi sağlık ekibine ulaşana kadar yanında kal.',
@@ -87,7 +129,27 @@ const saglikSenaryolari = [
       kaynak: 'NHS • Leeds Teaching Hospitals',
       kontrolEdilecek: false,
     },
-    sonrasi: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    sonrasi: {
+      baslik: 'Burun Kanaması Sonrası',
+      ozet: 'Kanama durduktan sonra da burnun içi kolayca yeniden kanayabilir. Burnunu zorlamadan dinlen ve uyarı belirtilerini izle.',
+      yapilacaklar: [
+        { ikon: 'bed-outline', baslik: 'Düz yatma.', aciklama: 'Dinlenirken başını yüksekte tut; dümdüz uzanma.' },
+        { ikon: 'water-outline', baslik: 'Burnundaki salgıyı nazikçe temizle.', aciklama: 'Burnunu sümkürmek yerine salgıyı içine çekip bir mendile tükür.' },
+        { ikon: 'emoticon-outline', baslik: 'Hapşırırken ağzını aç.', aciklama: 'Hapşırık gelirse ağzını açık tut; böylece burnuna binen basınç azalır.' },
+        { ikon: 'stethoscope', baslik: 'Uyarı belirtilerini izle.', aciklama: 'Baş dönmesi, bayılma hissi veya kan kusma olursa sağlık kuruluşuna başvur.' },
+        { ikon: 'pill', baslik: 'İlacını kendiliğinden bırakma.', aciklama: 'Kan sulandırıcı kullanıyorsan ilacını kesmeden önce doktoruna danış.' },
+      ],
+      guvenliIpuclari: ['Yanında mendil bulundur.', 'Kanama tekrarlarsa aynı ilk yardımı uygula.', 'Tekrarlarsa ne zaman olduğunu not et.'],
+      kacinilmasiGerekenler: ['Burnundaki kabukları koparma.', 'Yeniden başlayan kanamayı önemsiz sayma.', 'Burnuna bir şey sokma.'],
+      ozelDurum: {
+        ikon: 'alert-circle-outline',
+        baslik: 'Kanama Darbeden Sonra Başladıysa',
+        aciklama: 'Başına veya burnuna darbe aldıktan sonra kanama olduysa ya da nefes almakta zorlanıyorsan beklemeden acile başvur.',
+      },
+      kaynak: 'NHS',
+      kontrolEdilecek: true,
+    },
   },
 
   // ===== referans/32 =====
@@ -96,7 +158,27 @@ const saglikSenaryolari = [
     kategori: 'saglik',
     ad: 'Nöbet',
     ikon: 'head-flash-outline',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Nöbet Anında',
+      ozet: 'Kasılmalar sırasında amaç kişiyi yaralanmalardan korumaktır. Hareketlerini durdurmaya çalışma; yanında kal ve süreyi takip et.',
+      yapilacaklar: [
+        { ikon: 'alert-octagon-outline', baslik: 'Çevresindeki tehlikeli eşyaları uzaklaştır.', aciklama: 'Sert, keskin veya sıcak eşyaları kişinin yakınından kaldır. Kişiyi gerekmedikçe yerinden taşıma.' },
+        { ikon: 'bed-outline', baslik: 'Başının altına yumuşak bir şey koy.', aciklama: 'Katlanmış bir giysi veya yastıkla başını yere çarpmaktan koru.' },
+        { ikon: 'hand-back-left-off-outline', baslik: 'Hareketlerini durdurmaya çalışma.', aciklama: 'Kollarını veya bacaklarını tutup kasılmaları engellemeye çalışma.' },
+        { ikon: 'timer-outline', baslik: 'Nöbetin başladığı saati not et.', aciklama: 'Nöbetin ne kadar sürdüğü 112 ve sağlık ekibi için önemli bir bilgidir.' },
+        { ikon: 'tshirt-crew-outline', baslik: 'Sıkan giysilerini gevşet.', aciklama: 'Boynundaki kravat, atkı veya sıkı yakayı gevşet. Gözlüğü varsa çıkar.' },
+      ],
+      guvenliIpuclari: ['Sakin kal.', 'Hareketleri aklında tutmaya çalış.', 'Yanındakilerden yardım iste.'],
+      kacinilmasiGerekenler: ['Ağzını zorla açmaya çalışma.', 'Soğan veya kolonya koklatma.', 'Nöbet sırasında ilaç vermeye çalışma.'],
+      ozelDurum: {
+        ikon: 'shield-account-outline',
+        baslik: 'Kişiyi Tanımıyorsan',
+        aciklama: 'Üzerinde sağlık bilgisi kartı veya bileklik olup olmadığına bak. Bulduğun bilgiyi gelen sağlık ekibine göster.',
+      },
+      kaynak: 'MEB İlk Yardım • CDC',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Nöbet Sonrası',
       ozet: 'Kasılmaların bitmesi, kişinin tamamen toparlandığı anlamına gelmez. Yanında kal, solunumunu izle ve yardım gerektiren belirtileri kontrol et.',

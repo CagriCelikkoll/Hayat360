@@ -1,5 +1,7 @@
 // Bu dosya "Doğa Şartlarında Hayatta Kalma" kategorisinin senaryolarını tutar.
-// Metinler referans/ fotoğraflarından HARFİ HARFİNE aktarıldı; değiştirmeyin.
+// Fotoğraftan gelen metinler HARFİ HARFİNE aktarıldı; değiştirmeyin.
+// "TASLAK" yorumlu sekmeleri fotoğraf olmadığı için biz yazdık (kontrolEdilecek: true);
+// bunlar uzman kontrolünden geçene kadar ekranda sarı "Taslak" etiketiyle görünür.
 // Alanların ne anlama geldiği veri/senaryolar/index.js dosyasının başında yazıyor.
 
 const dogaSartlariSenaryolari = [
@@ -9,7 +11,27 @@ const dogaSartlariSenaryolari = [
     kategori: 'doga-sartlari',
     ad: 'Doğada Kaybolma',
     ikon: 'image-filter-hdr',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Doğada Kayboldum',
+      ozet: 'Kaybolduğunu fark edince dur, sakin ol ve olduğun yerde kal. Yer değiştirmek, seni arayanların bulmasını zorlaştırır.',
+      yapilacaklar: [
+        { ikon: 'hand-back-right-outline', baslik: 'Dur ve sakin ol.', aciklama: 'Kaybolduğunu fark edince yürümeyi bırak. Derin nefes al ve durumunu düşün.' },
+        { ikon: 'map-marker-radius-outline', baslik: 'Olduğun yerde kal.', aciklama: 'Hemen bir tehlike yoksa yer değiştirme. Hava kararırken, yaralıysan veya çok yorgunsan özellikle bekle.' },
+        { ikon: 'phone-in-talk', baslik: 'Çekiyorsa 112’yi ara.', aciklama: 'Son bildiğin konumu ve çevrende gördüklerini anlat. Pilini korumak için telefonu gereksiz kullanma.' },
+        { ikon: 'whistle-outline', baslik: 'Düdükle işaret ver.', aciklama: 'Düdüğe üç kez üfle, kısa bir ara ver ve tekrarla. Gece fenerle, gündüz parlak bir yüzeyle işaret ver.' },
+        { ikon: 'tshirt-crew-outline', baslik: 'Sıcak kal ve enerjini koru.', aciklama: 'Rüzgârdan korunaklı bir yere geç ve kat kat giyin. Gereksiz yere yürüyüp yorulma.' },
+      ],
+      guvenliIpuclari: ['Sakin kalmaya çalış.', 'Yere görünür bir işaret yap.', 'Çocuklar bir ağaca sarılıp beklesin.'],
+      kacinilmasiGerekenler: ['Panikle koşma.', 'Dere yatağını izleyerek ilerleme.', 'Telefon pilini boşa harcama.'],
+      ozelDurum: {
+        ikon: 'weather-night',
+        baslik: 'Gece Bastırırsa',
+        aciklama: 'Karanlıkta yürümeye çalışma. Rüzgâr almayan bir yere geç, ısını korumaya çalış ve sabahı ve arama ekiplerini bekle.',
+      },
+      kaynak: 'NPS • US Forest Service',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Doğada Kaybolduktan Sonra',
       ozet: 'Bulunduğunda veya güvenli bir yere ulaştığında arama ekibini ve yakınlarını haberdar et. Yorgunluğunu ve olası yaralanmaları önemse.',
@@ -38,7 +60,27 @@ const dogaSartlariSenaryolari = [
     kategori: 'doga-sartlari',
     ad: 'Yılan Isırığı',
     ikon: 'snake',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Yılan Isırdı',
+      ozet: 'Her yılan ısırığını zehirli kabul et. Yılandan uzaklaş, sakin kal ve hemen 112’yi ara.',
+      yapilacaklar: [
+        { ikon: 'walk', baslik: 'Yılandan uzaklaş.', aciklama: 'Yılanın tekrar ısırmaması için sakin hareketlerle ondan uzaklaş.' },
+        { ikon: 'phone-in-talk', baslik: 'Hemen 112’yi ara.', aciklama: 'Isırık hafif görünse bile beklemeden yardım iste.' },
+        { ikon: 'bed-outline', baslik: 'Isırılan kişiyi uzandır.', aciklama: 'Kişiyi güvenli bir yere uzandır ve sakinleştir.' },
+        { ikon: 'snowflake-off', baslik: 'Buz veya soğuk uygulama.', aciklama: 'Isırık yerine buz, kar veya soğuk su koyma.' },
+        { ikon: 'block-helper', baslik: 'Zehir pompası kullanma.', aciklama: 'Yaraya vakumlu pompa veya benzeri bir araç uygulama; yararı yoktur ve yarayı kirletebilir.' },
+      ],
+      guvenliIpuclari: ['Her yılanı zehirli kabul et.', 'Yılanın yerini çevrendekilere söyle.', 'Telefonunu yanında tut.'],
+      kacinilmasiGerekenler: ['Isırılan yere herhangi bir şey sürme.', 'Paniğe kapılıp koşma.', 'Isırığı önemsiz sayma.'],
+      ozelDurum: {
+        ikon: 'alert',
+        baslik: 'Nefes Darlığı veya Bayılma Olursa',
+        aciklama: 'Kişide nefes darlığı, yüzde şişme, bilinç bulanıklığı veya bayılma olursa 112’ye hemen bildir ve görevlinin talimatlarına uy.',
+      },
+      kaynak: 'MEB İlk Yardım',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Yılan Isırığı Sonrası',
       ozet: 'İlk yardım tehlikeyi ortadan kaldırmaz. Yılan ısırığı şüphesinde acil sağlık değerlendirmesini beklemeden iste.',
@@ -87,7 +129,27 @@ const dogaSartlariSenaryolari = [
       kaynak: 'Sağlık Bakanlığı · CDC',
       kontrolEdilecek: false,
     },
-    sonrasi: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    sonrasi: {
+      baslik: 'Kene Çıkarıldıktan Sonra',
+      ozet: 'Kene çıkarılsa da hastalık belirtileri günler sonra başlayabilir. Tutunma yerini izle ve doğaya çıkarken kenelerden korun.',
+      yapilacaklar: [
+        { ikon: 'bandage', baslik: 'Tutunma yerini izle.', aciklama: 'Tutunma yerinde kızarıklık veya şişlik artarsa sağlık kuruluşuna başvur.' },
+        { ikon: 'tshirt-crew-outline', baslik: 'Riskli alanlarda vücudunu ört.', aciklama: 'Tarla, bahçe, orman ve piknik alanlarında uzun kollu giysi giy; pantolon paçalarını çorabının içine sok.' },
+        { ikon: 'palette-outline', baslik: 'Açık renkli giysi tercih et.', aciklama: 'Açık renkli giysilerin üzerinde keneyi daha kolay fark edersin.' },
+        { ikon: 'shoe-print', baslik: 'Kapalı ayakkabı giy.', aciklama: 'Riskli alanlara sandalet veya terlikle girme; ayaklarını kapalı tut.' },
+        { ikon: 'home-import-outline', baslik: 'Eve dönünce giysilerini kontrol et.', aciklama: 'Doğadan dönünce giysilerinde ve çantanda kene olup olmadığına bak.' },
+      ],
+      guvenliIpuclari: ['Gezide birbirinizi kontrol edin.', 'Evcil hayvanlarını da kontrol et.', 'Belirti yoksa da tetikte ol.'],
+      kacinilmasiGerekenler: ['Belirtileri yorgunluğa bağlama.', 'Kene mevsiminde tedbiri bırakma.', 'Çalılık alanlarda bacakların açıkta yürüme.'],
+      ozelDurum: {
+        ikon: 'cow',
+        baslik: 'Hayvanlarla Çalışıyorsan',
+        aciklama: 'Hayvanların üzerindeki keneleri çıplak elle toplama veya ezme; eldiven kullan. Hayvan bakımından sonra kendini kontrol et.',
+      },
+      kaynak: 'Sağlık Bakanlığı • CDC',
+      kontrolEdilecek: true,
+    },
   },
 
   // ===== referans/29 =====
@@ -96,7 +158,27 @@ const dogaSartlariSenaryolari = [
     kategori: 'doga-sartlari',
     ad: 'Orman Yangını',
     ikon: 'pine-tree-fire',
-    durumAni: null, // Fotoğrafı yok
+    // TASLAK: Fotoğrafı yok; resmi kaynaklara dayanarak biz yazdık (KONTROL_LISTESI.md)
+    durumAni: {
+      baslik: 'Orman Yangını Anında',
+      ozet: 'Orman yangını rüzgârla çok hızlı yayılabilir. Tahliye uyarısını beklemeden, tehlikeyi hissettiğinde uzaklaş ve 112’ye bildir.',
+      yapilacaklar: [
+        { ikon: 'phone-in-talk', baslik: 'Yangını hemen 112’ye bildir.', aciklama: 'Küçük bir duman bile görsen yerini ve büyüklüğünü 112’ye anlat.' },
+        { ikon: 'exit-run', baslik: 'Tehlikeyi hissedince hemen uzaklaş.', aciklama: 'Tahliye uyarısını bekleme. Yetkililerin belirlediği tahliye yollarını kullan; kestirmeler kapalı olabilir.' },
+        { ikon: 'water', baslik: 'Kaçamıyorsan su veya açık alan bul.', aciklama: 'Yakında göl, dere veya havuz varsa suya gir. Yoksa bitkisiz, açık veya taşlık bir alanda yere yüzüstü uzan.' },
+        { ikon: 'arrow-down-bold-outline', baslik: 'Dumanda yere yakın kal.', aciklama: 'Duman solumamak için nefesini yere yakın tut.' },
+        { ikon: 'car', baslik: 'Araçtaysan havalandırmayı içeri çevir.', aciklama: 'Klimayı iç hava dolaşımına al ve camları kapat. Belirlenen tahliye yolundan ilerle.' },
+      ],
+      guvenliIpuclari: ['Yetkililerin talimatlarına uy.', 'Yakınlarına nerede olduğunu bildir.', 'Çocukları ve yaşlıları önce çıkar.'],
+      kacinilmasiGerekenler: ['Eşya için zaman kaybetme.', 'Yangını izlemek için yaklaşma.', 'Islak bezi yüzüne bağlama.'],
+      ozelDurum: {
+        ikon: 'home-outline',
+        baslik: 'Evdeysen ve Tahliye Emri Yoksa',
+        aciklama: 'Duman yoğunsa kapı ve pencereleri kapatıp içeride kal. Nefes almakta zorlanırsan veya tehlike yaklaşırsa beklemeden uzaklaş.',
+      },
+      kaynak: 'Red Cross • CDC • OGM',
+      kontrolEdilecek: true,
+    },
     sonrasi: {
       baslik: 'Orman Yangını Sonrası',
       ozet: 'Alev görünmese de yanmış orman güvenli olmayabilir. Parka veya kamp alanına dönmeden önce resmî duyuruları kontrol et.',
