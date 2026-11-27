@@ -1,4 +1,5 @@
-// Bu dosya araç ekranlarındaki (Düdük, Fener) büyük düğmeyi çizer.
+// Bu dosya büyük düğmeyi çizer: araç ekranlarında (Düdük, Fener), Profil ve Hazırlık'taki
+// "Kaydet", "Kartı Göster" gibi düğmelerde kullanılır.
 // Düğme açıkken (aktifMi) verilen renkle dolu, kapalıyken sadece çerçeveli görünür.
 // devreDisiMi true ise soluk görünür ve dokunulamaz.
 

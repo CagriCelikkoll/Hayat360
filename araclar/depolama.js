@@ -1,27 +1,61 @@
 // Bu dosya telefonda kalıcı bilgi saklamak için AsyncStorage yardımcılarını içerir.
 // Bilgiler internete gitmez, sadece bu telefonda saklanır.
-// Şimdilik acil kişiler listesi burada okunur; Profil ekranı yazılınca kaydetme de buradan yapılacak.
+// Profil (acil durum kartı ve acil kişiler), Hazırlık Listesi işaretleri ve Aile Afet Planı buradan kaydedilir.
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// Acil kişilerin saklandığı anahtar (dolap etiketi gibi düşünebilirsin)
-const ACIL_KISILER_ANAHTARI = 'acilKisiler';
+// Kayıt anahtarları (dolaptaki çekmecelerin etiketleri gibi düşünebilirsin)
+const ACIL_KISILER_ANAHTARI = 'acilKisiler'; // "Konumumu Gönder" SMS'i de bu çekmeceden okur
+const ACIL_KART_ANAHTARI = 'acilKart';
+const HAZIRLIK_ISARETLERI_ANAHTARI = 'hazirlikIsaretleri';
+const AILE_PLANI_ANAHTARI = 'ailePlani';
 
-// Kayıtlı acil kişileri okur. Biçim: [{ ad: 'Annem', telefon: '05xx...' }, ...]
-// Hiç kayıt yoksa veya okuma başarısız olursa boş liste döner.
-export async function acilKisileriOku() {
+// Genel okuma: anahtardaki kaydı okur. Kayıt yoksa ya da okunamazsa "varsayilan" döner.
+async function oku(anahtar, varsayilan) {
   try {
-    const kayit = await AsyncStorage.getItem(ACIL_KISILER_ANAHTARI);
+    const kayit = await AsyncStorage.getItem(anahtar);
     if (kayit === null) {
-      return [];
+      return varsayilan;
     }
     return JSON.parse(kayit);
   } catch (hata) {
-    return [];
+    return varsayilan;
   }
 }
 
-// Acil kişi listesini kaydeder (Profil ekranı kullanacak)
+// Genel kaydetme: değeri yazıya (JSON) çevirip anahtara kaydeder
+async function kaydet(anahtar, deger) {
+  await AsyncStorage.setItem(anahtar, JSON.stringify(deger));
+}
+
+// --- Acil kişiler. Biçim: [{ ad: 'Annem', telefon: '05xx...' }, ...] ---
+export async function acilKisileriOku() {
+  return oku(ACIL_KISILER_ANAHTARI, []);
+}
 export async function acilKisileriKaydet(kisiler) {
-  await AsyncStorage.setItem(ACIL_KISILER_ANAHTARI, JSON.stringify(kisiler));
+  await kaydet(ACIL_KISILER_ANAHTARI, kisiler);
+}
+
+// --- Acil durum kartı. Biçim: { adSoyad, dogumYili, kanGrubu, alerjiler, kronikHastaliklar, ilaclar } ---
+export async function acilKartiOku() {
+  return oku(ACIL_KART_ANAHTARI, {});
+}
+export async function acilKartiKaydet(kart) {
+  await kaydet(ACIL_KART_ANAHTARI, kart);
+}
+
+// --- Hazırlık listesi işaretleri. Biçim: { 'su': true, 'el-feneri': true, ... } ---
+export async function hazirlikIsaretleriniOku() {
+  return oku(HAZIRLIK_ISARETLERI_ANAHTARI, {});
+}
+export async function hazirlikIsaretleriniKaydet(isaretler) {
+  await kaydet(HAZIRLIK_ISARETLERI_ANAHTARI, isaretler);
+}
+
+// --- Aile afet planı. Biçim: { mahalleDisiBulusma, mahalleIciBulusma, irtibatAdi, irtibatTelefonu, not } ---
+export async function ailePlaniniOku() {
+  return oku(AILE_PLANI_ANAHTARI, {});
+}
+export async function ailePlaniniKaydet(plan) {
+  await kaydet(AILE_PLANI_ANAHTARI, plan);
 }

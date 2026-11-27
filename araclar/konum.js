@@ -26,6 +26,18 @@ export function konumMesajiOlustur(enlem, boylam) {
   );
 }
 
+// Profil'de kayıtlı acil kişileri okuyup "SMS alıcıları: Annem (0555...), ..." yazısını hazırlar.
+// Ana Sayfa bu yazıyı göstererek SMS'in kime hazırlanacağını önceden söyler.
+export async function smsAlicilariYazisi() {
+  const kisiler = await acilKisileriOku();
+  const telefonuOlanlar = kisiler.filter((kisi) => kisi.telefon);
+  if (telefonuOlanlar.length === 0) {
+    return 'Kayıtlı acil kişi yok; SMS alıcısız açılır. Profil’den acil kişi ekleyebilirsin.';
+  }
+  const isimler = telefonuOlanlar.map((kisi) => (kisi.ad ? kisi.ad + ' (' + kisi.telefon + ')' : kisi.telefon));
+  return 'SMS alıcıları: ' + isimler.join(', ');
+}
+
 // Konumu alıp SMS ekranını açar. Sonuç: { basarili: true/false, mesaj: 'kullanıcıya gösterilecek yazı' }
 export async function konumumuGonder() {
   // 1) Konum izni iste
@@ -73,7 +85,7 @@ export async function konumumuGonder() {
 
   // 4) Acil kişileri oku ve SMS ekranını aç
   const kisiler = await acilKisileriOku();
-  const numaralar = kisiler.map((kisi) => kisi.telefon);
+  const numaralar = kisiler.map((kisi) => kisi.telefon).filter((telefon) => telefon); // Telefonu boş olanları atla
 
   try {
     await SMS.sendSMSAsync(numaralar, smsMetni);
@@ -84,7 +96,7 @@ export async function konumumuGonder() {
   if (numaralar.length === 0) {
     return {
       basarili: true,
-      mesaj: 'Kayıtlı acil kişi yok; SMS alıcısız açıldı. Profil’den acil kişi ekleyebilirsin. ' + konumYazisi,
+      mesaj: 'SMS ekranı alıcısız açıldı; alıcıyı SMS uygulamasında seçebilirsin. ' + konumYazisi,
     };
   }
   return { basarili: true, mesaj: 'SMS ekranı açıldı. Göndermek için SMS uygulamasında Gönder’e bas. ' + konumYazisi };

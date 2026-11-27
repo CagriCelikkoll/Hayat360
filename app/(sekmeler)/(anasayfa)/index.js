@@ -10,7 +10,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { senaryoBul } from '../../../veri/senaryolar';
 import kategoriler from '../../../veri/kategoriler';
-import { konumIzniDurumu, konumumuGonder } from '../../../araclar/konum';
+import { konumIzniDurumu, konumumuGonder, smsAlicilariYazisi } from '../../../araclar/konum';
 import { renkler, yaziBoyutlari, bosluklar, koseler } from '../../../araclar/tema';
 
 import CevrimdisiRozet from '../../../bilesenler/CevrimdisiRozet';
@@ -30,10 +30,12 @@ export default function AnaSayfa() {
   const [izinAciklamasiAcik, setIzinAciklamasiAcik] = useState(false); // İzin istemeden önceki açıklama
   const [konumAliniyor, setKonumAliniyor] = useState(false);
   const [konumSonucu, setKonumSonucu] = useState(null); // { basarili, mesaj }
+  const [alicilar, setAlicilar] = useState(''); // "SMS alıcıları: Annem (0555...)" yazısı
 
   // "Konumumu Gönder"e basınca: izin daha önce verilmediyse önce neden istediğimizi açıkla
   async function konumButonunaBasildi() {
     setKonumSonucu(null);
+    setAlicilar(await smsAlicilariYazisi()); // Profil'deki acil kişileri her seferinde yeniden oku
     const durum = await konumIzniDurumu();
     if (durum === 'granted') {
       konumuGonderBaslat();
@@ -87,7 +89,10 @@ export default function AnaSayfa() {
         {izinAciklamasiAcik ? (
           <BilgiKutusu
             renk={KONUM_RENGI}
-            yazi="Konumunu SMS ile yakınlarına gönderebilmemiz için konum iznine ihtiyacımız var. Konum internetsiz de GPS ile alınır ve sadece senin göndereceğin SMS’e yazılır."
+            yazi={
+              'Konumunu SMS ile yakınlarına gönderebilmemiz için konum iznine ihtiyacımız var. Konum internetsiz de GPS ile alınır ve sadece senin göndereceğin SMS’e yazılır.\n\n' +
+              alicilar
+            }
           >
             <AracDugmesi yazi="İzin Ver ve Gönder" ikon="map-marker-check" renk={KONUM_RENGI} aktifMi dokununca={konumuGonderBaslat} />
             <AracDugmesi yazi="Vazgeç" ikon="close" renk={renkler.kartKenari} dokununca={() => setIzinAciklamasiAcik(false)} />
@@ -95,7 +100,7 @@ export default function AnaSayfa() {
         ) : null}
         {konumAliniyor ? <BilgiKutusu renk={KONUM_RENGI} yazi="Konum alınıyor… Açık alandaysan daha hızlı bulunur." /> : null}
         {konumSonucu ? (
-          <BilgiKutusu renk={konumSonucu.basarili ? renkler.guvenli : renkler.tehlike} yazi={konumSonucu.mesaj} />
+          <BilgiKutusu renk={konumSonucu.basarili ? renkler.guvenli : renkler.tehlike} yazi={konumSonucu.mesaj + '\n\n' + alicilar} />
         ) : null}
 
         {/* Hızlı erişim */}

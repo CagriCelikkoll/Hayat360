@@ -23,6 +23,8 @@
 - **Bilerek yazılmayan süre ve dozlar:** Turnike süresi, burun kanaması sonrası sümkürmeme süresi, tipide
   motoru çalıştırma süresi, suyu klorla arıtma ölçüsü. Kaynaklar çelişkili olduğu veya tıbbi ayrıntı olduğu
   için yazılmadı. Tek istisna: suyu "en az bir dakika" kaynatma (CDC).
+- **Hazırlık Listesi (çanta) ve Rehber (6 konu) de taslaktır.** Ayrıntılar en alttaki "Hazırlık Listesi ve Rehber"
+  bölümünde. Hepsi AFAD/MGM/Kandilli sayfalarına dayanıyor; Kızılay sitesi açılmadığı için Kızılay'a dayanmıyor.
 
 ---
 
@@ -178,3 +180,52 @@ yapılmalı ve satır buradan silinmeli.
 - **Fırtına:** Türkiye'ye özel (AFAD/MGM) fırtına anı rehberi bulamadım; içerik ABD kurumlarına (NWS, Red Cross, CDC) dayanıyor.
 - **Yıldırım → "Açıkta Sığınak Bulamıyorsan" kartı:** CDC'ye göre açık alanda güvenli yer yoktur; çömelme
   sadece son çare olarak anlatıldı.
+
+## Hazırlık Listesi ve Rehber
+
+Bu içerikler fotoğraftan gelmedi; veride `kontrolEdilecek: true`, uygulamada sarı **"Taslak"** etiketiyle görünür.
+AFAD sayfaları tarayıcıda açılıp okundu (27.11.2026). Türk Kızılay'ın afet sitesi (afetyonetimi.kizilay.org.tr)
+açılmadığı için **Kızılay kaynağı kullanılamadı**; uzman Kızılay ile karşılaştırabilir.
+
+### Afet ve acil durum çantası (`veri/hazirlik.js`)
+
+- **Dayanılan sayfa:** [AFAD: Afet ve Acil Durum Çantası Hazırlayın – Basın Bülteni (03.03.2021)](https://www.afad.gov.tr/afet-ve-acil-durum-cantasi-hazirlayin-basin-bulteni).
+  AFAD'ın 16 maddesinin hepsi alındı. Ek olarak bültenin son paragrafındaki "özel ihtiyaçlar" ve "evcil hayvan
+  malzemeleri" iki madde yapıldı (toplam 19 madde).
+- **Bize ait olan:** Maddelerin 6 gruba (Su ve Gıda, İlk Yardım, Aydınlatma ve İletişim, Belgeler, Giysi ve Hijyen,
+  Diğer) ayrılması ve açıklamaların kısaltılması. AFAD listesi gruplu değil.
+- **Bilerek yazılmayan miktarlar:** Kişi başı su miktarı ve kaç günlük gıda. Bunlar AFAD bülteninde geçmiyor;
+  sadece haber sitelerinde var. Listedeki sayılar yalnızca AFAD'da açıkça geçenler: "1 adet yağmurluk",
+  "1 not defteri ve 1 kalem", "6 ayda bir güncelleme".
+- Haber sitelerinde geçen ama AFAD bülteninde olmayan maddeler (nakit para, battaniye, çakı vb.) eklenmedi.
+
+### Aile Afet Planı (`bilesenler/AilePlani.js`)
+
+- Alanlar kullanıcının isteğine göre; AFAD'ın "alternatif buluşma yerleri ve bölge dışı bağlantı kişisi
+  belirlenmelidir" önerisiyle uyumlu ([AFADEM: Deprem](https://www.afad.gov.tr/afadem/deprem)).
+- Açıklama cümlesi ("Afette eve ulaşamazsanız nerede buluşacağınızı ve kimi arayacağınızı ailece önceden
+  belirleyin.") bize ait.
+
+### Rehber – afetlerden önce (`veri/rehber.js`)
+
+| Konu | Kaynak satırı | Dayanılan sayfalar |
+|---|---|---|
+| Deprem | AFAD – AFADEM Deprem · AFAD Muğla | [AFADEM: Deprem](https://www.afad.gov.tr/afadem/deprem), [AFAD Muğla: Sevdikleriniz ve Kendiniz İçin Önlem Alın](https://mugla.afad.gov.tr/sevdikleriniz-ve-kendiniz-icin-onlem-alin-guvende-kalin) |
+| Ev Yangını | AFAD – AFADEM Yangın | [AFADEM: Yangın](https://www.afad.gov.tr/afadem/yangin) |
+| Sel | AFAD – Sel Öncesi… · AFADEM Sel | [AFAD: Sel Öncesi, Anı ve Sonrası Tedbirli Olun](https://www.afad.gov.tr/sel-oncesi-ani-ve-sonrasi-tedbirli-olun-guvende-kalin), [AFADEM: Sel](https://www.afad.gov.tr/afadem/sel) |
+| Fırtına | MGM · AFAD Antalya | [MGM: Rüzgar Fırtınası](https://mgm.gov.tr/arastirma/dogal-afetler.aspx?s=kuvvetliruzgar), [AFAD Antalya: Şiddetli Rüzgar ve Fırtınadan Korunma](https://antalya.afad.gov.tr/siddetli-ruzgar-ve-firtinadan-korunma) |
+| Heyelan | AFAD – AFADEM Heyelan | [AFADEM: Heyelan](https://www.afad.gov.tr/afadem/heyelan) |
+| Tsunami | Kandilli · AFAD Muğla | [Kandilli: Tsunami Bilgi Notu (2021)](http://www.koeri.boun.edu.tr/sismo/TSUNAMI_BILGI/BDTIM_Tsunami_Turkce_Haziran_2021.html), [AFAD Muğla](https://mugla.afad.gov.tr/sevdikleriniz-ve-kendiniz-icin-onlem-alin-guvende-kalin) |
+
+**Notlar:**
+- **Bilerek yazılmayan numara:** AFADEM Yangın sayfası itfaiye için **110** numarasını veriyor. Kural gereği
+  (sadece 112) yazılmadı.
+- **Tsunami → "Yüksek yeri önceden belirle":** Kandilli'nin tsunami el kitabındaki "tahliye yollarını öğrenin"
+  önerisine dayanıyor; el kitabının PDF'ini açamadım, bu cümleyi yalnızca arama sonucundaki alıntıdan okudum.
+  AFAD'ın kendi sitesinde tsunami öncesi için ayrı bir sayfa bulamadım.
+- **Tsunami → "Kıyıda deprem = yükseğe çık":** Kandilli bunu "uyarı geldiğinde / deprem hissettiğinizde" diye
+  anlatıyor; Rehber'de "bunu önceden bil" şeklinde hazırlık maddesine çevrildi.
+- **Sel:** AFAD sayfasındaki "MGM'den telefonla bilgi alın" önerisi numara gerektirdiği için alınmadı.
+- **Fırtına:** AFADEM'de fırtına sayfası yok (adres 404 veriyor); MGM ve AFAD Antalya kullanıldı.
+- Her maddenin kısa kalın başlığı (ör. "Yatağının yerini kontrol et.") bize ait; açıklamalar kaynaktaki
+  cümlelerin sadeleştirilmiş hâli.
