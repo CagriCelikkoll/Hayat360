@@ -2,10 +2,10 @@
 // Üstte başlık ve çevrimdışı rozeti, altında arama kutusu vardır.
 // Arama boşken 7 kategori kartı, arama doluyken eşleşen senaryolar listelenir.
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useRouter } from 'expo-router';
+import { useRouter, useNavigation } from 'expo-router';
 
 import senaryolar from '../../../veri/senaryolar';
 import kategoriler from '../../../veri/kategoriler';
@@ -23,6 +23,19 @@ export default function AcilDurum() {
   // Arama kutusuna yazılan metin. Senaryo ekranından geri dönünce bu ekran
   // silinmediği için yazılan metin olduğu gibi kalır.
   const [aramaMetni, setAramaMetni] = useState('');
+
+  // Acil Durum SEKMESİNDEN çıkınca (alt menüden başka sekmeye geçince) aramayı temizle.
+  // Böylece sekmeye geri dönünce hep kategori kartları görünür.
+  // (Senaryoya girip geri dönmek sekmeden çıkmak sayılmaz; o durumda arama korunur.)
+  const navigation = useNavigation();
+  useEffect(() => {
+    const acilSekmesi = navigation.getParent(); // Alt menüdeki "Acil Durum" sekmesi
+    if (!acilSekmesi) {
+      return;
+    }
+    const dinleyiciyiKaldir = acilSekmesi.addListener('blur', () => setAramaMetni(''));
+    return dinleyiciyiKaldir; // Ekran kapanınca dinlemeyi bırak
+  }, [navigation]);
 
   // Arama doluysa eşleşen senaryoları bul
   const aramaYapiliyorMu = aramaMetni.trim() !== '';

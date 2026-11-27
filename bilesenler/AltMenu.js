@@ -10,7 +10,7 @@ import { renkler, yaziBoyutlari, bosluklar, koseler } from '../araclar/tema';
 
 // Her sekmenin dosya adı -> ekranda görünecek yazı ve ikon
 const sekmeBilgileri = {
-  index: { yazi: 'Ana Sayfa', ikon: 'home' },
+  '(anasayfa)': { yazi: 'Ana Sayfa', ikon: 'home' }, // Ana Sayfa artık kendi klasöründe
   rehber: { yazi: 'Rehber', ikon: 'book-open' },
   acil: { yazi: 'Acil Durum', ikon: 'alert-triangle' },
   hazirlik: { yazi: 'Hazırlık Listesi', ikon: 'check-square' },

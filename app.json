@@ -29,6 +29,28 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }
+      ],
+      [
+        "expo-audio",
+        {
+          "microphonePermission": false,
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Hayat360, Fener aracında telefonun flaşını açıp kapatabilmek için kameraya erişir. Fotoğraf veya video çekmez.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false,
+          "barcodeScannerEnabled": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Hayat360, acil durumda konumunu SMS ile yakınlarına gönderebilmek için konumuna erişir. Konum internetsiz de GPS ile alınır."
+        }
       ]
     ]
   }

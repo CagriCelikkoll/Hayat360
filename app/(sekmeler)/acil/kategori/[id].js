@@ -10,6 +10,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import senaryolar from '../../../../veri/senaryolar';
 import kategoriler from '../../../../veri/kategoriler';
 import { useHapRengi } from '../../../../araclar/hapRengi';
+import { useGeriGit } from '../../../../araclar/geriGit';
 import { renkler, yaziBoyutlari, bosluklar } from '../../../../araclar/tema';
 
 import BosEkran from '../../../../bilesenler/BosEkran';
@@ -27,21 +28,15 @@ export default function KategoriEkrani() {
   // Alt menüdeki "Acil Durum" hapı bu kategorinin rengini alsın
   useHapRengi(renk);
 
+  // Geri ok: Acil Durum sekmesinin içinde bir önceki ekrana (Acil Durum ana ekranı) döner
+  const geriGit = useGeriGit('/acil');
+
   if (!kategori) {
     return <BosEkran baslik="Kategori bulunamadı" aciklama={`"${id}" adında bir kategori yok.`} />;
   }
 
   // Bu kategoriye ait senaryolar
   const kategoriSenaryolari = senaryolar.filter((senaryo) => senaryo.kategori === kategori.id);
-
-  // Geri okuna basınca Acil Durum ekranına dön
-  function geriGit() {
-    if (router.canGoBack()) {
-      router.back();
-    } else {
-      router.replace('/acil');
-    }
-  }
 
   return (
     <SafeAreaView style={stiller.ekran} edges={['top']}>
