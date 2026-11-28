@@ -1,6 +1,7 @@
 // Bu dosya telefonda kalıcı bilgi saklamak için AsyncStorage yardımcılarını içerir.
 // Bilgiler internete gitmez, sadece bu telefonda saklanır.
-// Profil (acil durum kartı ve acil kişiler), Hazırlık Listesi işaretleri ve Aile Afet Planı buradan kaydedilir.
+// Profil (acil durum kartı ve acil kişiler), Hazırlık Listesi işaretleri, Aile Afet Planı ve
+// yakındaki telefonlarla yazışılan mesajlar buradan kaydedilir.
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -9,6 +10,8 @@ const ACIL_KISILER_ANAHTARI = 'acilKisiler'; // "Konumumu Gönder" SMS'i de bu �
 const ACIL_KART_ANAHTARI = 'acilKart';
 const HAZIRLIK_ISARETLERI_ANAHTARI = 'hazirlikIsaretleri';
 const AILE_PLANI_ANAHTARI = 'ailePlani';
+const YAKIN_MESAJLAR_ANAHTARI = 'yakinMesajlar';
+const EN_FAZLA_SAKLANAN_MESAJ = 200; // Telefon dolmasın diye en yeni 200 mesaj saklanır
 
 // Genel okuma: anahtardaki kaydı okur. Kayıt yoksa ya da okunamazsa "varsayilan" döner.
 async function oku(anahtar, varsayilan) {
@@ -58,4 +61,13 @@ export async function ailePlaniniOku() {
 }
 export async function ailePlaniniKaydet(plan) {
   await kaydet(AILE_PLANI_ANAHTARI, plan);
+}
+
+// --- Yakındakilere Mesaj ekranındaki mesajlar ---
+// Biçim: [{ id, gonderen, metin, zaman, sekmeSayisi, benimMi, ulasilanKisi }, ...] (eskiden yeniye)
+export async function yakinMesajlariOku() {
+  return oku(YAKIN_MESAJLAR_ANAHTARI, []);
+}
+export async function yakinMesajlariKaydet(mesajlar) {
+  await kaydet(YAKIN_MESAJLAR_ANAHTARI, mesajlar.slice(-EN_FAZLA_SAKLANAN_MESAJ));
 }

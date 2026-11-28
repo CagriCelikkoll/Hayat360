@@ -82,7 +82,7 @@ export default function AnaSayfa() {
         <View style={[stiller.satir, stiller.ikinciSatir]}>
           <SosButonu ad="Konumumu Gönder" aciklama="SMS ile" ikon="map-marker-radius" renk={KONUM_RENGI} dokununca={konumButonunaBasildi} />
           <View style={stiller.araBosluk} />
-          <SosButonu ad="Yakındakilere Mesaj" aciklama="Yakında" ikon="access-point" renk="#0ED9C3" dokununca={() => router.push('/arac/mesajlar')} />
+          <SosButonu ad="Yakındakilere Mesaj" aciklama="İnternetsiz" ikon="access-point" renk="#0ED9C3" dokununca={() => router.push('/arac/mesajlar')} />
         </View>
 
         {/* Konum izni açıklaması (izin istenmeden önce gösterilir) */}

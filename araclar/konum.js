@@ -38,8 +38,9 @@ export async function smsAlicilariYazisi() {
   return 'SMS alıcıları: ' + isimler.join(', ');
 }
 
-// Konumu alıp SMS ekranını açar. Sonuç: { basarili: true/false, mesaj: 'kullanıcıya gösterilecek yazı' }
-export async function konumumuGonder() {
+// İzin ister ve GPS ile konumu alır. "Konumumu Gönder" ve Mesajlar'daki "SOS + Konumum" bunu kullanır.
+// Sonuç: { basarili: true, enlem: '40.123456', boylam: '29.123456' } ya da { basarili: false, mesaj: '...' }
+export async function konumuAl() {
   // 1) Konum izni iste
   let izin;
   try {
@@ -55,19 +56,31 @@ export async function konumumuGonder() {
   }
 
   // 2) GPS ile konumu al
-  let enlem;
-  let boylam;
   try {
     const konum = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High });
     // Virgülden sonra 6 basamak yeterince hassastır (yaklaşık 10 cm)
-    enlem = konum.coords.latitude.toFixed(6);
-    boylam = konum.coords.longitude.toFixed(6);
+    return {
+      basarili: true,
+      enlem: konum.coords.latitude.toFixed(6),
+      boylam: konum.coords.longitude.toFixed(6),
+    };
   } catch (hata) {
     return {
       basarili: false,
       mesaj: 'Konum alınamadı. Telefonun konum (GPS) ayarının açık olduğundan emin ol; mümkünse açık bir alana çıkıp tekrar dene.',
     };
   }
+}
+
+// Konumu alıp SMS ekranını açar. Sonuç: { basarili: true/false, mesaj: 'kullanıcıya gösterilecek yazı' }
+export async function konumumuGonder() {
+  // 1-2) İzin iste ve GPS ile konumu al
+  const konumSonucu = await konumuAl();
+  if (!konumSonucu.basarili) {
+    return konumSonucu;
+  }
+  const enlem = konumSonucu.enlem;
+  const boylam = konumSonucu.boylam;
 
   const smsMetni = konumMesajiOlustur(enlem, boylam);
   const konumYazisi = 'Konumun: ' + enlem + ', ' + boylam;
