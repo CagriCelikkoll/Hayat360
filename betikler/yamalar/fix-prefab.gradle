@@ -1,0 +1,55 @@
+// Bu dosya expo-nearby-connections kütüphanesinin npm paketinde UNUTULMUŞ olan android/fix-prefab.gradle dosyasıdır.
+// Kütüphanenin build.gradle'ı bu dosyayı istiyor ama pakette yok; bu yüzden APK derlemesi başarısız oluyordu
+// (kütüphanenin GitHub sayfasında issue #14). İçerik, kütüphanenin GitHub deposundaki dosyadan (main dalı) alındı.
+// betikler/kutuphane-yamalari.js her "npm install"dan sonra bu dosyayı node_modules içine kopyalar.
+// Tek değişiklik: aşağıda "BİZİM DEĞİŞİKLİĞİMİZ" yazan satırlar (açıklaması orada).
+
+tasks.configureEach { task ->
+  def prefabConfigurePattern = ~/^prefab(.+)ConfigurePackage$/
+  def matcher = task.name =~ prefabConfigurePattern
+  if (matcher.matches()) {
+    def variantName = matcher[0][1]
+    task.outputs.upToDateWhen { false }
+    task.dependsOn("externalNativeBuild${variantName}")
+  }
+}
+
+afterEvaluate {
+  // BİZİM DEĞİŞİKLİĞİMİZ: Orijinal dosya burada build.gradle'daki reactNativeArchitectures() fonksiyonunu
+  // çağırıyordu. Başka dosyada tanımlı bir fonksiyona buradan erişilebileceği kesin olmadığı için
+  // aynı hesabı (hangi işlemci türleri için derleniyor?) burada kendimiz yapıyoruz.
+  def mimariAyari = rootProject.getProperties().get("reactNativeArchitectures")
+  def abis = mimariAyari ? mimariAyari.split(",") : ["armeabi-v7a", "x86", "x86_64", "arm64-v8a"]
+
+  rootProject.allprojects.each { proj ->
+    if (proj === rootProject) return
+
+    def dependsOnThisLib = proj.configurations.findAll { it.canBeResolved }.any { config ->
+      config.dependencies.any { dep ->
+        dep.group == project.group && dep.name == project.name
+      }
+    }
+    if (!dependsOnThisLib && proj != project) return
+
+    if (!proj.plugins.hasPlugin('com.android.application') && !proj.plugins.hasPlugin('com.android.library')) {
+      return
+    }
+
+    def variants = proj.android.hasProperty('applicationVariants') ? proj.android.applicationVariants : proj.android.libraryVariants
+    variants.all { variant ->
+      def variantName = variant.name
+      abis.each { abi ->
+        def searchDir = new File(proj.projectDir, ".cxx/${variantName}")
+        if (!searchDir.exists()) return
+        def matches = []
+        searchDir.eachDir { randomDir ->
+          def prefabFile = new File(randomDir, "${abi}/prefab_config.json")
+          if (prefabFile.exists()) matches << prefabFile
+        }
+        matches.each { prefabConfig ->
+          prefabConfig.setLastModified(System.currentTimeMillis())
+        }
+      }
+    }
+  }
+}

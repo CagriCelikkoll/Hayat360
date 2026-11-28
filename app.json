@@ -20,7 +20,11 @@
         "android.permission.BLUETOOTH_CONNECT",
         "android.permission.NEARBY_WIFI_DEVICES",
         "android.permission.ACCESS_WIFI_STATE",
-        "android.permission.CHANGE_WIFI_STATE"
+        "android.permission.CHANGE_WIFI_STATE",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK",
+        "android.permission.CAMERA"
       ],
       "adaptiveIcon": {
         "backgroundColor": "#071322",
@@ -67,6 +71,16 @@
       ],
       "expo-nearby-connections",
       "expo-asset"
-    ]
+    ],
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "0cb58b14-22c9-4abe-9957-18c600026233"
+      }
+    }
   }
 }

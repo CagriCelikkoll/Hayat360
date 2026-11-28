@@ -1,0 +1,60 @@
+# Bu dosya EAS derlemesine (APK) YÜKLENMEYECEK dosyaları listeler.
+# Dikkat: .easignore varsa EAS .gitignore'u hiç okumaz. Bu yüzden .gitignore'daki her şey aşağıya
+# aynen kopyalandı. .gitignore'a yeni bir satır eklersen buraya da ekle.
+# betikler/ klasörü bilerek yükleniyor: kutuphane-yamalari.js derlemede "npm install" sonrası çalışıyor.
+
+# ---------------- .gitignore'un kopyası ----------------
+
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+example
+
+# generated native folders
+/ios
+/android
+
+# Proje notları (repoya gitmesin)
+CLAUDE.md
+PROMPTLAR.md
+.claude/
+
+# ---------------- Sadece EAS için ek satırlar ----------------
+
+# Tasarım fotoğrafları ve öğretmen kontrol listesi: uygulamanın içinde kullanılmıyor
+# (sonunda "/" yok: böylece boş "referans" klasörü bile gönderilmez)
+/referans
+/KONTROL_LISTESI.md
